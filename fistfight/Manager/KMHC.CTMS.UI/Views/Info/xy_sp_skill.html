@@ -1,0 +1,81 @@
+﻿
+<!--详情页-->
+<div class="container-fluid">
+	<div class="panel panel-info">
+	    <div class="panel-heading">
+	        <strong><i class="fa fa-fw fa-medkit fa-lg"></i>xy_sp_skill</strong>
+	    </div>
+	    <div class="panel-body">
+	        <form class="form-horizontal" name="InfoForm">
+	        		        		           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSkillName">  技能名称</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSkillName" ng-model="Info.SkillName"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSkillDescription">  技能描述</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSkillDescription" ng-model="Info.SkillDescription"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSkillPathPrompt">  技能提示</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSkillPathPrompt" ng-model="Info.SkillPathPrompt"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSkillType">  0 物理伤害 1魔法伤害</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSkillType" ng-model="Info.SkillType"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSkillGainValue">  伤害值</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSkillGainValue" ng-model="Info.SkillGainValue"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtExpendType">  消耗类型</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtExpendType" ng-model="Info.ExpendType"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtExpendValue">  消耗值</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtExpendValue" ng-model="Info.ExpendValue"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtisGroupinjury">  是否群体伤害技能</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtisGroupinjury" ng-model="Info.isGroupinjury"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtinjuryCount">  最大伤害个数</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtinjuryCount" ng-model="Info.injuryCount"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtNeedLevel">  所需等级</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtNeedLevel" ng-model="Info.NeedLevel"  />
+		                    </div>
+		                    		            </div>
+		            	           		            <div class="form-group">
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="btn btn-info btn-block" ng-click="GoBack()"><i class="fa fa-fw fa-reply-all"></i>返回</button>
+	                </div>
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="col-md-2 btn btn-info btn-block" ng-disabled="InfoForm.$invalid" ng-click="Save()"><i class="fa fa-fw fa-save"></i>确定</button>
+	                </div>
+	            </div>
+	        </form>
+	    </div>
+    </div>
+</div>

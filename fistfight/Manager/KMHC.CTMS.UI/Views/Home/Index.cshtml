@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/Content/css")
+    @System.Web.Optimization.Scripts.Render("~/Script/bootstrap")
+</head>
+<body ng-controller="MyController">
+    <div id="wrapper">
+
+        <!-- 导航 -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#/"><strong>xiyou管理平台</strong></a>
+            </div>
+
+            <!-- 右侧用户信息菜单 -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @ViewBag.LoginName <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/#/UserInfo"><i class="fa fa-fw fa-user"></i>我的信息</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/#/"><i class="fa fa-fw fa-home"></i>首页</a></li>
+                <li><a href="javascript:void(0);" ng-click="logout()"><i class="fa fa-fw fa-power-off"></i>注销</a></li>
+            </ul>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li><a href="#/tm_pm_userinfo"><i class="icon-list"></i> tm_pm_userinfo</a></li>
+                    <li><a href="#/xy_sp_chapter"><i class="icon-list"></i> xy_sp_chapter</a></li>
+                    <li><a href="#/xy_sp_equipment"><i class="icon-list"></i> xy_sp_equipment</a></li>
+                    <li><a href="#/xy_sp_map"><i class="icon-list"></i> xy_sp_map</a></li>
+                    <li><a href="#/xy_sp_skill"><i class="icon-list"></i> xy_sp_skill</a></li>
+                    <li><a href="#/xy_sp_spirit"><i class="icon-list"></i> xy_sp_spirit</a></li>
+                    <li><a href="#/xy_sp_spiritequipment"><i class="icon-list"></i> xy_sp_spiritequipment</a></li>
+                    <li><a href="#/xy_sp_spiritskill"><i class="icon-list"></i> xy_sp_spiritskill</a></li>
+                    <li><a href="#/xy_sp_task"><i class="icon-list"></i> xy_sp_task</a></li>
+                    <li><a href="#/xy_sp_taskoption"><i class="icon-list"></i> xy_sp_taskoption</a></li>
+                    <li><a href="#/xy_sp_taskspirit"><i class="icon-list"></i> xy_sp_taskspirit</a></li>
+                    <li><a href="#/xy_sp_userinfo"><i class="icon-list"></i> xy_sp_userinfo</a></li>
+                    <li><a href="#/xy_sp_userspirit"><i class="icon-list"></i> xy_sp_userspirit</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 内容框架 -->
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <!-- 左边菜单导航 -->
+                <div id="viewContainer" ng-view on-finish-view-render></div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+    @System.Web.Optimization.Scripts.Render("~/Script/angular")
+</body>
+</html>

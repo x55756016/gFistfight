@@ -1,0 +1,87 @@
+﻿
+<!--详情页-->
+<div class="container-fluid">
+	<div class="panel panel-info">
+	    <div class="panel-heading">
+	        <strong><i class="fa fa-fw fa-medkit fa-lg"></i>xy_sp_spirit</strong>
+	    </div>
+	    <div class="panel-body">
+	        <form class="form-horizontal" name="InfoForm">
+	        		        		           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritName">  名称</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritName" ng-model="Info.SpiritName"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritLife">  生命值</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritLife" ng-model="Info.SpiritLife"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritMagic">  魔法值</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritMagic" ng-model="Info.SpiritMagic"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtPhysicalResistance">  物抗</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtPhysicalResistance" ng-model="Info.PhysicalResistance"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtMagicResistance">  魔抗</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtMagicResistance" ng-model="Info.MagicResistance"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritLevel">  等级</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritLevel" ng-model="Info.SpiritLevel"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritExperience">  经验值</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritExperience" ng-model="Info.SpiritExperience"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritMoney">  金币</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritMoney" ng-model="Info.SpiritMoney"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtPhysicalHarm">  攻击力</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtPhysicalHarm" ng-model="Info.PhysicalHarm"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtMagicHarm">  魔法力</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtMagicHarm" ng-model="Info.MagicHarm"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtSpiritspeed">  速度</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtSpiritspeed" ng-model="Info.Spiritspeed"  />
+		                    </div>
+		                    		            </div>
+		            	           		            <div class="form-group">
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="btn btn-info btn-block" ng-click="GoBack()"><i class="fa fa-fw fa-reply-all"></i>返回</button>
+	                </div>
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="col-md-2 btn btn-info btn-block" ng-disabled="InfoForm.$invalid" ng-click="Save()"><i class="fa fa-fw fa-save"></i>确定</button>
+	                </div>
+	            </div>
+	        </form>
+	    </div>
+    </div>
+</div>

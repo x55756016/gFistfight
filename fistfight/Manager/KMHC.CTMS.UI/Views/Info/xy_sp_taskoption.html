@@ -1,0 +1,51 @@
+﻿
+<!--详情页-->
+<div class="container-fluid">
+	<div class="panel panel-info">
+	    <div class="panel-heading">
+	        <strong><i class="fa fa-fw fa-medkit fa-lg"></i>xy_sp_taskoption</strong>
+	    </div>
+	    <div class="panel-body">
+	        <form class="form-horizontal" name="InfoForm">
+	        		        		           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtOptionName">  选项名称</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtOptionName" ng-model="Info.OptionName"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtOptionDesc">  选项描述</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtOptionDesc" ng-model="Info.OptionDesc"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtIsCorrect">  是否正确选项</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtIsCorrect" ng-model="Info.IsCorrect"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtNextTaskID">  下一 任务ID</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtNextTaskID" ng-model="Info.NextTaskID"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtPreviousTaskID">  上一任务ID</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtPreviousTaskID" ng-model="Info.PreviousTaskID"  />
+		                    </div>
+		                    		            </div>
+		            	           		            <div class="form-group">
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="btn btn-info btn-block" ng-click="GoBack()"><i class="fa fa-fw fa-reply-all"></i>返回</button>
+	                </div>
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="col-md-2 btn btn-info btn-block" ng-disabled="InfoForm.$invalid" ng-click="Save()"><i class="fa fa-fw fa-save"></i>确定</button>
+	                </div>
+	            </div>
+	        </form>
+	    </div>
+    </div>
+</div>

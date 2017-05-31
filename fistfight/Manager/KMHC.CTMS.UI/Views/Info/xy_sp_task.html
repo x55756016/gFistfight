@@ -1,0 +1,51 @@
+﻿
+<!--详情页-->
+<div class="container-fluid">
+	<div class="panel panel-info">
+	    <div class="panel-heading">
+	        <strong><i class="fa fa-fw fa-medkit fa-lg"></i>xy_sp_task</strong>
+	    </div>
+	    <div class="panel-body">
+	        <form class="form-horizontal" name="InfoForm">
+	        		        		           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtTaskID">  任务id</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtTaskID" ng-model="Info.TaskID"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtTaskName">  任务名称</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtTaskName" ng-model="Info.TaskName"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtTaskDescript">  任务描述</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtTaskDescript" ng-model="Info.TaskDescript"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtNpcName">  任务所属NPC</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtNpcName" ng-model="Info.NpcName"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtIsBattleTask">  是否战斗任务</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtIsBattleTask" ng-model="Info.IsBattleTask"  />
+		                    </div>
+		                    		            </div>
+		            	           		            <div class="form-group">
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="btn btn-info btn-block" ng-click="GoBack()"><i class="fa fa-fw fa-reply-all"></i>返回</button>
+	                </div>
+	                <div class="col-md-2 col-md-offset-1">
+	                    <button type="button" class="col-md-2 btn btn-info btn-block" ng-disabled="InfoForm.$invalid" ng-click="Save()"><i class="fa fa-fw fa-save"></i>确定</button>
+	                </div>
+	            </div>
+	        </form>
+	    </div>
+    </div>
+</div>
