@@ -4,37 +4,60 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    <script src="../Scripts/jquery.signalR-2.0.0.min.js"></script>
     <script type="text/javascript">
 <!--
         $(function () {
             //Set the hubs URL for the connection
             debugger;
-            $.connection.hub.url = "http://localhost:8080/signalr";
-            // Declare a proxy to reference the hub.
-            var chat = $.connection.myHub;
-
-            // Create a function that the hub can call to broadcast messages.
-            chat.client.addMessage = function (name, message) {
-                // Html encode display name and message.
-                var encodedName = $('<div />').text(name).html();
-                var encodedMsg = $('<div />').text(message).html();
-                // Add the message to the page.
-                $('#discussion').append('<li><strong>' + encodedName
-                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
-            };
-            // Get the user name and store it to prepend to messages.
+            var url = "ws://localhost:2014";
+            var ws = null;
             $('#displayname').val(prompt('Enter your name:', ''));
+
+            var name = $('#displayname').val;
+            var fullUrl = url + "/" + name;
+
+            if ("WebSocket" in window) {
+                ws = new WebSocket(fullUrl);
+            }
+            else if ("MozWebSocket" in window) {
+                ws = new MozWebSocket(fullUrl);
+            } else {
+                document.getElementById("message_output").innerHTML = "浏览器不支持WebSocket";
+            }
+
+            ws.onopen = function () {
+                //document.getElementById("message_output").innerHTML += "连接服务器成功" + "<br/>";
+                //changeElementEnabled(true);
+            }
+            ws.onclose = function () {
+                //document.getElementById("message_output").innerHTML += "与服务器断开连接" + "<br/>";
+                //changeElementEnabled(false);
+            }
+
+            ws.onerror = function () {
+                //document.getElementById("message_output").innerHTML += "通信发生错误" + "<br/>";
+            }
+            ws.onmessage = function (message) {
+                //document.getElementById("message_output").innerHTML += msg.data + "<br/>";
+                //var encodedName = $('<div />').text(name).html();
+                //var encodedMsg = $('<div />').text(message).html();
+                // Add the message to the page.
+                debugger;
+                $('#discussion').append('<li><strong>' //+ $('#displayname').val
+                    + '</strong>:&nbsp;&nbsp;' + message.data + '</li>');
+            }
+
+            // Get the user name and store it to prepend to messages.
+           
             // Set initial focus to message input box.
             $('#message').focus();
             // Start the connection.
-            $.connection.hub.start().done(function () {
-                $('#sendmessage').click(function () {
-                    // Call the Send method on the hub.
-                    chat.server.send($('#displayname').val(), $('#message').val());
-                    // Clear text box and reset focus for next comment.
-                    $('#message').val('').focus();
-                });
+            $('#sendmessage').click(function () {
+                debugger;
+                // Call the Send method on the hub.
+                if (ws) { ws.send($('#message').val()); }
+                // Clear text box and reset focus for next comment.
+                $('#message').val('').focus();
             });
         });
 //-->

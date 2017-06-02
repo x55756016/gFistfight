@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Project.BLL;
+﻿using Project.BLL;
 using Project.Model;
 using System;
 using System.ComponentModel.DataAnnotations;

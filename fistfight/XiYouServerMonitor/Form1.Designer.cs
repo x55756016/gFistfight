@@ -30,6 +30,7 @@
         {
             this.btnStart = new System.Windows.Forms.Button();
             this.labTxtMsg = new System.Windows.Forms.Label();
+            this.btnStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -51,12 +52,23 @@
             this.labTxtMsg.TabIndex = 1;
             this.labTxtMsg.Text = "label1";
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(275, 23);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 0;
+            this.btnStop.Text = "停止";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 666);
             this.Controls.Add(this.labTxtMsg);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label labTxtMsg;
+        private System.Windows.Forms.Button btnStop;
     }
 }
 

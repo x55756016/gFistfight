@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNet.SignalR;
-using Microsoft.Owin.Cors;
-using Microsoft.Owin.Hosting;
-using Owin;
+﻿using SuperWebSocket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +13,9 @@ namespace XiYouServerMonitor
 {
     public partial class Form1 : Form
     {
+        private SimpleWebsocket simpleWebsocket;
+        private BoardcastWebSocket boardcastWebsocket;
+        private ChatWebSocket chatWebsocket;
         public Form1()
         {
             InitializeComponent();
@@ -24,28 +24,28 @@ namespace XiYouServerMonitor
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            string url = "http://localhost:8080";
-            using (WebApp.Start(url))
-            {
-               labTxtMsg.Text=string.Format("Server running on {0}", url);
-               
-            }
-        }
-    }
-    class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            app.UseCors(CorsOptions.AllowAll);
-            app.MapSignalR();
-        }
-    }
+            simpleWebsocket = new SimpleWebsocket();
+            boardcastWebsocket = new BoardcastWebSocket();
+            chatWebsocket = new ChatWebSocket();
 
-    public class MyHub : Hub
-    {
-        public void Send(string name, string message)
+            simpleWebsocket.Start();
+            boardcastWebsocket.Start();
+            chatWebsocket.Start();
+            labTxtMsg.Text = "服务器启动成功，在8080端口开启监听";
+        
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
         {
-            Clients.All.addMessage(name, message);
+            try
+            {
+                simpleWebsocket.Stop();
+                boardcastWebsocket.Stop();
+                chatWebsocket.Stop();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
