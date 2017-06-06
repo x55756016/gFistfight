@@ -41,7 +41,9 @@ namespace XiYouServerMonitor
         }
         void ws_NewMessageReceived(WebSocketSession session, string value)
         {
-            var msg = string.Format("{0:HH:MM:ss} {1}说: {2}", DateTime.Now, value, value);
+            string strName = value.Split('/')[0];
+            string strMsg = value.Split('/')[1];
+            var msg =DateTime.Now.ToString("HH:MM:ss")+" "+strName+"说: "+strMsg;
 
             SendToAll(session, msg);
 

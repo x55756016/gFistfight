@@ -4,72 +4,9 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript">
-<!--
-        $(function () {
-            //Set the hubs URL for the connection
-            debugger;
-            var url = "ws://localhost:2014";
-            var ws = null;
-            $('#displayname').val(prompt('Enter your name:', ''));
-
-            var name = $('#displayname').val;
-            var fullUrl = url + "/" + name;
-
-            if ("WebSocket" in window) {
-                ws = new WebSocket(fullUrl);
-            }
-            else if ("MozWebSocket" in window) {
-                ws = new MozWebSocket(fullUrl);
-            } else {
-                document.getElementById("message_output").innerHTML = "浏览器不支持WebSocket";
-            }
-
-            ws.onopen = function () {
-                //document.getElementById("message_output").innerHTML += "连接服务器成功" + "<br/>";
-                //changeElementEnabled(true);
-            }
-            ws.onclose = function () {
-                //document.getElementById("message_output").innerHTML += "与服务器断开连接" + "<br/>";
-                //changeElementEnabled(false);
-            }
-
-            ws.onerror = function () {
-                //document.getElementById("message_output").innerHTML += "通信发生错误" + "<br/>";
-            }
-            ws.onmessage = function (message) {
-                //document.getElementById("message_output").innerHTML += msg.data + "<br/>";
-                //var encodedName = $('<div />').text(name).html();
-                //var encodedMsg = $('<div />').text(message).html();
-                // Add the message to the page.
-                debugger;
-                $('#discussion').append('<li><strong>' //+ $('#displayname').val
-                    + '</strong>:&nbsp;&nbsp;' + message.data + '</li>');
-            }
-
-            // Get the user name and store it to prepend to messages.
-           
-            // Set initial focus to message input box.
-            $('#message').focus();
-            // Start the connection.
-            $('#sendmessage').click(function () {
-                debugger;
-                // Call the Send method on the hub.
-                if (ws) { ws.send($('#message').val()); }
-                // Clear text box and reset focus for next comment.
-                $('#message').val('').focus();
-            });
-        });
-//-->
-    </script>
+    <script src="../Scripts/ChatRoom.js"></script>
 </head>
 <body>
-    <div class="container">
-        <input type="text" id="message" />
-        <input type="button" id="sendmessage" value="Send" />
-        <input type="hidden" id="displayname" />
-        <ul id="discussion"></ul>
-    </div>
     <div class="row">
         <div class="col-md-2">
             我方信息
@@ -108,12 +45,23 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">聊天信息</div>
-        <div class="col-md-12">
-            <textarea style="width:100%"></textarea>
-        </div>
-        <div class="col-md-12"><p><a href="" class="btn btn-primary btn-large">发送</a></p></div>
-        <div class="col-md-12"><p><a href="~/Home" class="btn btn-primary btn-large">返回</a></p></div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">聊天信息</h3>
+                <input type="hidden" id="displayname" />
+            </div>
+            <div class="panel-body">
+                <ul id="discussionBoard"></ul>
+            </div>
+            <div class="panel-footer">
+                <div class="panel-body">
+                    <div class="col-md-10">
+                        <input type="text" id="message"/>
+                    </div>
+                    <div class="col-md-1"><p><a id="sendmessage" class="btn btn-primary btn-large">发送</a></p></div>
+                    <div class="col-md-1"><p><a href="~/Home" class="btn btn-primary btn-large">返回</a></p></div>
+                </div>
+        </div>        
     </div>
 </body>
 </html>
