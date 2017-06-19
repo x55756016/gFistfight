@@ -9,6 +9,8 @@ angular.module('userApp', [
                 	, 'xy_sp_chapter'
                 	, 'xy_sp_equipment'
                 	, 'xy_sp_map'
+                	, 'xy_sp_outfit'
+                	, 'xy_sp_outfitequipment'
                 	, 'xy_sp_skill'
                 	, 'xy_sp_spirit'
                 	, 'xy_sp_spiritequipment'
@@ -34,6 +36,12 @@ angular.module('userApp', [
             $routeProvider.when('/xy_sp_map', { templateUrl: '/Views/List/xy_sp_map.html', controller: 'xy_sp_mapCtrl' });
             $routeProvider.when('/Addxy_sp_map', { templateUrl: '/Views/Info/xy_sp_map.html', controller: 'Addxy_sp_mapCtrl' });
             $routeProvider.when('/Editxy_sp_map', { templateUrl: '/Views/Info/xy_sp_map.html', controller: 'Addxy_sp_mapCtrl' });
+            $routeProvider.when('/xy_sp_outfit', { templateUrl: '/Views/List/xy_sp_outfit.html', controller: 'xy_sp_outfitCtrl' });
+            $routeProvider.when('/Addxy_sp_outfit', { templateUrl: '/Views/Info/xy_sp_outfit.html', controller: 'Addxy_sp_outfitCtrl' });
+            $routeProvider.when('/Editxy_sp_outfit', { templateUrl: '/Views/Info/xy_sp_outfit.html', controller: 'Addxy_sp_outfitCtrl' });
+            $routeProvider.when('/xy_sp_outfitequipment', { templateUrl: '/Views/List/xy_sp_outfitequipment.html', controller: 'xy_sp_outfitequipmentCtrl' });
+            $routeProvider.when('/Addxy_sp_outfitequipment', { templateUrl: '/Views/Info/xy_sp_outfitequipment.html', controller: 'Addxy_sp_outfitequipmentCtrl' });
+            $routeProvider.when('/Editxy_sp_outfitequipment', { templateUrl: '/Views/Info/xy_sp_outfitequipment.html', controller: 'Addxy_sp_outfitequipmentCtrl' });
             $routeProvider.when('/xy_sp_skill', { templateUrl: '/Views/List/xy_sp_skill.html', controller: 'xy_sp_skillCtrl' });
             $routeProvider.when('/Addxy_sp_skill', { templateUrl: '/Views/Info/xy_sp_skill.html', controller: 'Addxy_sp_skillCtrl' });
             $routeProvider.when('/Editxy_sp_skill', { templateUrl: '/Views/Info/xy_sp_skill.html', controller: 'Addxy_sp_skillCtrl' });

@@ -9,6 +9,11 @@ namespace Project.UI
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/respond.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -25,12 +30,12 @@ namespace Project.UI
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                 "~/Content/bootstrap.min.css",
-                "~/Content/sb-admin.css"));
+                 "~/Content/bootstrap.min.css"));
+            bundles.Add(new StyleBundle("~/Content/sb-admin").Include(
+                "~/Content/sb-admin.css"));//angular管理后台样式
 
-            bundles.Add(new ScriptBundle("~/Script/bootstrap").Include("~/Scripts/jquery-2.1.4.min.js"
-                , "~/Scripts/bootstrap.js"
-                , "~/Scripts/bootstrap-datepicker*"
+            bundles.Add(new ScriptBundle("~/Script/bootstrap_control").Include(
+                "~/Scripts/bootstrap-datepicker*"
                 , "~/Scripts/bootstrap-multiselect.js"
                 , "~/AppScripts/common/common.js"
                 , "~/Scripts/paging.js"
@@ -49,34 +54,22 @@ namespace Project.UI
                         , "~/AppScripts/common/area.js"
                         , "~/AppScripts/common/AppRoute.js"
                         , "~/AppScripts/Home/dug.js"
-                                                , "~/AppScripts/ModuleJS/tm_pm_userinfo.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_chapter.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_equipment.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_map.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_skill.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_spirit.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_spiritequipment.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_spiritskill.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_task.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_taskoption.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_taskspirit.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_userinfo.js"
-                                                , "~/AppScripts/ModuleJS/xy_sp_userspirit.js"
-                                                ));
-
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
-                        "~/Content/themes/base/jquery.ui.resizable.css",
-                        "~/Content/themes/base/jquery.ui.selectable.css",
-                        "~/Content/themes/base/jquery.ui.accordion.css",
-                        "~/Content/themes/base/jquery.ui.autocomplete.css",
-                        "~/Content/themes/base/jquery.ui.button.css",
-                        "~/Content/themes/base/jquery.ui.dialog.css",
-                        "~/Content/themes/base/jquery.ui.slider.css",
-                        "~/Content/themes/base/jquery.ui.tabs.css",
-                        "~/Content/themes/base/jquery.ui.datepicker.css",
-                        "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+                        , "~/AppScripts/ModuleJS/tm_pm_userinfo.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_chapter.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_equipment.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_map.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_outfit.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_outfitequipment.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_skill.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_spirit.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_spiritequipment.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_spiritskill.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_task.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_taskoption.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_taskspirit.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_userinfo.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_userspirit.js"
+                        ));
         }
     }
 }

@@ -3,13 +3,9 @@
  *  
  * 修订历史: 
  * 日期          修改人              Email              内容
- * 20151102      张志明              			创建 
+ * 20151102      向寒咏              			创建 
  *  
  */
-
-using log4net.Core;
-using log4net.Layout;
-using log4net.Layout.Pattern;
 using System;
 using System.Collections.Generic;
 using System.IO;

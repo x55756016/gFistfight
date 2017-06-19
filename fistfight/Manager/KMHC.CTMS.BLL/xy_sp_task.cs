@@ -3,7 +3,7 @@
  *  
  * 修订历史: 
  * 日期                    修改人              Email                   内容
- * 2017-05-31                                         创建 
+ * 2017-06-15                                         创建 
  *  
  */
  
@@ -32,7 +32,7 @@ namespace Project.BLL
                 
   			using(xy_sp_taskDAL dal = new xy_sp_taskDAL()){              
             xy_sp_task entity = ModelToEntity(model);
-            entity.chapterID = string.IsNullOrEmpty(model.chapterID) ? Guid.NewGuid().ToString("N") : model.chapterID;
+            entity.TaskID = string.IsNullOrEmpty(model.TaskID) ? Guid.NewGuid().ToString("N") : model.TaskID;
 
             return dal.Add(entity);
             }
@@ -120,12 +120,20 @@ namespace Project.BLL
             {
                 xy_sp_task entity = new xy_sp_task()
                 {
-                	                    	chapterID = model.chapterID,
-                                        	TaskID = model.TaskID,
+                	                    	TaskID = model.TaskID,
+                                        	AddrID = model.AddrID,
+                                        	AddrName = model.AddrName,
+                                        	AddrX = model.AddrX,
+                                        	AddrY = model.AddrY,
+                                        	chapterID = model.chapterID,
+                                        	chapterName = model.chapterName,
                                         	TaskName = model.TaskName,
                                         	TaskDescript = model.TaskDescript,
                                         	NpcName = model.NpcName,
                                         	IsBattleTask = model.IsBattleTask,
+                                        	IsOptionTask = model.IsOptionTask,
+                                        	NextTaskID = model.NextTaskID,
+                                        	PreviousTaskID = model.PreviousTaskID,
                                     };
 
                 return entity;
@@ -144,12 +152,20 @@ namespace Project.BLL
             {
                 V_xy_sp_task  model = new V_xy_sp_task ()
                 {
-                                       	chapterID = entity.chapterID,
-                                        	TaskID = entity.TaskID,
+                                       	TaskID = entity.TaskID,
+                                        	AddrID = entity.AddrID,
+                                        	AddrName = entity.AddrName,
+                                        	AddrX = entity.AddrX,
+                                        	AddrY = entity.AddrY,
+                                        	chapterID = entity.chapterID,
+                                        	chapterName = entity.chapterName,
                                         	TaskName = entity.TaskName,
                                         	TaskDescript = entity.TaskDescript,
                                         	NpcName = entity.NpcName,
                                         	IsBattleTask = entity.IsBattleTask,
+                                        	IsOptionTask = entity.IsOptionTask,
+                                        	NextTaskID = entity.NextTaskID,
+                                        	PreviousTaskID = entity.PreviousTaskID,
                                     };
 
                 return model;

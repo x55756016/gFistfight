@@ -14,11 +14,19 @@ namespace Project.DAL.Database
     
     public partial class xy_sp_task
     {
-        public string chapterID { get; set; }
         public string TaskID { get; set; }
+        public string AddrID { get; set; }
+        public string AddrName { get; set; }
+        public Nullable<decimal> AddrX { get; set; }
+        public Nullable<decimal> AddrY { get; set; }
+        public string chapterID { get; set; }
+        public string chapterName { get; set; }
         public string TaskName { get; set; }
         public string TaskDescript { get; set; }
         public string NpcName { get; set; }
         public Nullable<decimal> IsBattleTask { get; set; }
+        public Nullable<decimal> IsOptionTask { get; set; }
+        public string NextTaskID { get; set; }
+        public string PreviousTaskID { get; set; }
     }
 }

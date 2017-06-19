@@ -48,8 +48,10 @@
                             <tr ng-repeat="x in List">
                                                                   	                                                                 	                                                                    		<td>{{x.OptionName}}</td>
                                 	                                	                                                                 	                                                                    		<td>{{x.OptionDesc}}</td>
-                                	                                	                                                                 	                                                                    		<td>{{x.IsCorrect}}</td>
-                                	                                	                                                                 	                                                                    		<td>{{x.NextTaskID}}</td>
+                                	                                	                                                                 	                                    							        	<td ng-if="x.IsCorrect===true">是</td>
+							        	<td ng-if="x.IsCorrect===false">否</td>
+							        	<!--<td ng-if="x.IsCorrect===null>">否</td>-->
+									                                	                                                                 	                                                                    		<td>{{x.NextTaskID}}</td>
                                 	                                	                                                                 	                                                                    		<td>{{x.PreviousTaskID}}</td>
                                 	                                	                                                                <td><a href="javascript:void(0);" ng-click="Edit(x)">编辑</a> <a href="javascript:void(0);" ng-click="Remove(x)">删除</a></td>
                             </tr>

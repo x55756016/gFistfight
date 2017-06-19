@@ -78,8 +78,10 @@
                                 	                                	                                                                 	                                                                 	                                    										<td>{{x.CreateDateTime | date:'yyyy-MM-dd' }}</td>
 							                                        	                                                                 	                                                                    		<td>{{x.EditUserId}}</td>
                                 	                                	                                                                 	                                    										<td>{{x.EditDateTime | date:'yyyy-MM-dd' }}</td>
-							                                        	                                                                 	                                                                    		<td>{{x.IsDeleted}}</td>
-                                	                                	                                                                <td><a href="javascript:void(0);" ng-click="Edit(x)">编辑</a> <a href="javascript:void(0);" ng-click="Remove(x)">删除</a></td>
+							                                        	                                                                 	                                    							        	<td ng-if="x.IsDeleted===true">是</td>
+							        	<td ng-if="x.IsDeleted===false">否</td>
+							        	<!--<td ng-if="x.IsDeleted===null>">否</td>-->
+									                                	                                                                <td><a href="javascript:void(0);" ng-click="Edit(x)">编辑</a> <a href="javascript:void(0);" ng-click="Remove(x)">删除</a></td>
                             </tr>
                         </tbody>
                     </table>

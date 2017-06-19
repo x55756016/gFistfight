@@ -3,7 +3,7 @@
  *  
  * 修订历史: 
  * 日期                    修改人              Email                   内容
- * 2017-05-31                            创建 
+ * 2017-06-15                            创建 
  *  
  */
  
@@ -36,7 +36,7 @@ namespace KMHC.CTMS.UI.Controllers.API
                 {
                     PageIndex = CurrentPage,
                     PageSize = _pageSize,
-                    OrderField = "chapterID",
+                    OrderField = "TaskID",
                     Order = OrderEnum.asc
                 };
                 var list = bll.GetList(pageInfo);
@@ -56,14 +56,14 @@ namespace KMHC.CTMS.UI.Controllers.API
 
         public IHttpActionResult Get(string ID)
         {
-            V_xy_sp_task model = bll.Get(p=>p.chapterID==ID);
+            V_xy_sp_task model = bll.Get(p=>p.TaskID==ID);
             return Ok(model);
         }
 
         public IHttpActionResult Post([FromBody]Request<V_xy_sp_task> request)
         {
             V_xy_sp_task model = request.Data as V_xy_sp_task;
-            if (string.IsNullOrEmpty(model.chapterID))
+            if (string.IsNullOrEmpty(model.TaskID))
             {
                 bll.Add(model);
             }

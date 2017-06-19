@@ -20,5 +20,6 @@ namespace Project.DAL.Database
         public Nullable<decimal> gainType { get; set; }
         public Nullable<decimal> gainValue { get; set; }
         public Nullable<decimal> NeedLevel { get; set; }
+        public Nullable<decimal> Price { get; set; }
     }
 }

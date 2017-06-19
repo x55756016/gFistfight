@@ -8,9 +8,39 @@
 	    <div class="panel-body">
 	        <form class="form-horizontal" name="InfoForm">
 	        		        		           		        			            <div class="form-group">
-		                <label class="col-md-1 control-label" for="txtTaskID">  任务id</label>                
+		                <label class="col-md-1 control-label" for="txtAddrID">  地图ID</label>                
 		                			                	<div class="col-md-5">
-		                    	<input type="text" class="form-control" id="txtTaskID" ng-model="Info.TaskID"  />
+		                    	<input type="text" class="form-control" id="txtAddrID" ng-model="Info.AddrID"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtAddrName">  地图名称</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtAddrName" ng-model="Info.AddrName"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtAddrX">  地图坐标X</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtAddrX" ng-model="Info.AddrX"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtAddrY">  地图坐标Y</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtAddrY" ng-model="Info.AddrY"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtchapterID">  章节ID</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtchapterID" ng-model="Info.chapterID"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtchapterName">  章节名称</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtchapterName" ng-model="Info.chapterName"  />
 		                    </div>
 		                    		            </div>
 		            	           		        			            <div class="form-group">
@@ -34,7 +64,35 @@
 		            	           		        			            <div class="form-group">
 		                <label class="col-md-1 control-label" for="txtIsBattleTask">  是否战斗任务</label>                
 		                			                	<div class="col-md-5">
-		                    	<input type="text" class="form-control" id="txtIsBattleTask" ng-model="Info.IsBattleTask"  />
+			                	<select class="form-control" id="txtIsBattleTask" ng-model="Info.IsBattleTask">	
+			                		<option value="">请选择</option>
+			                		<option ng-repeat="c in SelectInfo" value="{{c.value}}">
+			                                {{c.text}}
+			                    	</option>
+			   					</select>   
+							</div>	   					
+		   							            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtIsOptionTask">  是否选择题</label>                
+		                			                	<div class="col-md-5">
+			                	<select class="form-control" id="txtIsOptionTask" ng-model="Info.IsOptionTask">	
+			                		<option value="">请选择</option>
+			                		<option ng-repeat="c in SelectInfo" value="{{c.value}}">
+			                                {{c.text}}
+			                    	</option>
+			   					</select>   
+							</div>	   					
+		   							            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtNextTaskID">  下一 任务ID</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtNextTaskID" ng-model="Info.NextTaskID"  />
+		                    </div>
+		                    		            </div>
+		            	           		        			            <div class="form-group">
+		                <label class="col-md-1 control-label" for="txtPreviousTaskID">  上一任务ID</label>                
+		                			                	<div class="col-md-5">
+		                    	<input type="text" class="form-control" id="txtPreviousTaskID" ng-model="Info.PreviousTaskID"  />
 		                    </div>
 		                    		            </div>
 		            	           		            <div class="form-group">

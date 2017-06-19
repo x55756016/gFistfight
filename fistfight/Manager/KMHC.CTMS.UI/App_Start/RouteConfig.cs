@@ -12,6 +12,7 @@ namespace Project.UI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapMvcAttributeRoutes();//注册属性路由
 
             routes.MapRoute(
                 name: "Default",

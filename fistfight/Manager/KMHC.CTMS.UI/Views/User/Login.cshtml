@@ -9,8 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>用户中心</title>
-    @System.Web.Optimization.Styles.Render("~/Content/css")
-    @System.Web.Optimization.Scripts.Render("~/Script/bootstrap")
     <link rel="stylesheet" href="/Content/jquery.bxslider.css" />
     <style type="text/css">
         body {
@@ -97,9 +95,11 @@
             </div>
         </div>
     </div>
-
-    <script src="/Scripts/jquery-2.1.4.min.js"></script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
     @System.Web.Optimization.Scripts.Render("~/Script/angular")
+    @System.Web.Optimization.Styles.Render("~/Content/css")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/Script/bootstrap_control")
     <script src="/Scripts/jquery.bxslider.js"></script>
     <script src="/AppScripts/User/main.js"></script>
 </body>

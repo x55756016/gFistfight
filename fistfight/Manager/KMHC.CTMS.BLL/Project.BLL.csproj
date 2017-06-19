@@ -63,6 +63,8 @@
     <Compile Include="xy_sp_chapter.cs" />
     <Compile Include="xy_sp_equipment.cs" />
     <Compile Include="xy_sp_map.cs" />
+    <Compile Include="xy_sp_outfit.cs" />
+    <Compile Include="xy_sp_outfitequipment.cs" />
     <Compile Include="xy_sp_skill.cs" />
     <Compile Include="xy_sp_spirit.cs" />
     <Compile Include="xy_sp_spiritequipment.cs" />
@@ -70,7 +72,6 @@
     <Compile Include="xy_sp_task.cs" />
     <Compile Include="xy_sp_taskoption.cs" />
     <Compile Include="xy_sp_taskspirit.cs" />
-    <Compile Include="xy_sp_userinfo.cs" />
     <Compile Include="xy_sp_userspirit.cs" />
   </ItemGroup>
   <ItemGroup>

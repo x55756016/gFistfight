@@ -22,9 +22,14 @@
 		            	           		        			            <div class="form-group">
 		                <label class="col-md-1 control-label" for="txtIsCorrect">  是否正确选项</label>                
 		                			                	<div class="col-md-5">
-		                    	<input type="text" class="form-control" id="txtIsCorrect" ng-model="Info.IsCorrect"  />
-		                    </div>
-		                    		            </div>
+			                	<select class="form-control" id="txtIsCorrect" ng-model="Info.IsCorrect">	
+			                		<option value="">请选择</option>
+			                		<option ng-repeat="c in SelectInfo" value="{{c.value}}">
+			                                {{c.text}}
+			                    	</option>
+			   					</select>   
+							</div>	   					
+		   							            </div>
 		            	           		        			            <div class="form-group">
 		                <label class="col-md-1 control-label" for="txtNextTaskID">  下一 任务ID</label>                
 		                			                	<div class="col-md-5">

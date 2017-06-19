@@ -1,0 +1,72 @@
+﻿@model Project.DAL.Database.xy_sp_equipment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>xy_sp_equipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gainType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gainType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gainValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gainValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

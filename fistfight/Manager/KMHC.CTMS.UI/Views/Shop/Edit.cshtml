@@ -1,0 +1,82 @@
+﻿@model Project.DAL.Database.xy_sp_equipment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>xy_sp_equipment</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.EquipmentID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EquipmentName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EquipmentName)
+                @Html.ValidationMessageFor(model => model.EquipmentName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EquipmentType, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EquipmentType)
+                @Html.ValidationMessageFor(model => model.EquipmentType)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.gainType, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.gainType)
+                @Html.ValidationMessageFor(model => model.gainType)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.gainValue, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.gainValue)
+                @Html.ValidationMessageFor(model => model.gainValue)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NeedLevel, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NeedLevel)
+                @Html.ValidationMessageFor(model => model.NeedLevel)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

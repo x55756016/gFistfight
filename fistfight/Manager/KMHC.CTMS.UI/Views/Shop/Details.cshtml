@@ -1,0 +1,66 @@
+﻿@model Project.DAL.Database.xy_sp_equipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>xy_sp_equipment</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gainType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gainType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gainValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gainValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EquipmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

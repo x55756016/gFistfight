@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiYou", "fistfight\XiYou.csproj", "{171F4C87-A802-4B76-8541-BEED52F11A43}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Manager", "Manager", "{26794C0F-8E02-4FA5-9904-A95389B1ADE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BLL", "Manager\KMHC.CTMS.BLL\Project.BLL.csproj", "{FCB5B0F2-EB9F-4C27-980D-B4857D613A3C}"
@@ -28,16 +26,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{7D76F2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiYouServerMonitor", "XiYouServerMonitor\XiYouServerMonitor.csproj", "{B766DE17-06A4-48DE-A3CD-8318EDAABF57}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{3984A6B9-12ED-44A2-83F6-20EADE918939}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiYou", "fistfight\XiYou.csproj", "{171F4C87-A802-4B76-8541-BEED52F11A43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{171F4C87-A802-4B76-8541-BEED52F11A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{171F4C87-A802-4B76-8541-BEED52F11A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{171F4C87-A802-4B76-8541-BEED52F11A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{171F4C87-A802-4B76-8541-BEED52F11A43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCB5B0F2-EB9F-4C27-980D-B4857D613A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCB5B0F2-EB9F-4C27-980D-B4857D613A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCB5B0F2-EB9F-4C27-980D-B4857D613A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +63,10 @@ Global
 		{B766DE17-06A4-48DE-A3CD-8318EDAABF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B766DE17-06A4-48DE-A3CD-8318EDAABF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B766DE17-06A4-48DE-A3CD-8318EDAABF57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171F4C87-A802-4B76-8541-BEED52F11A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171F4C87-A802-4B76-8541-BEED52F11A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171F4C87-A802-4B76-8541-BEED52F11A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171F4C87-A802-4B76-8541-BEED52F11A43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

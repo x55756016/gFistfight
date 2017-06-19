@@ -3,7 +3,7 @@
  *  
  * 修订历史: 
  * 日期                    修改人              Email                   内容
- * 2017-05-31                                         创建 
+ * 2017-06-15                                         创建 
  *  
  */
  
@@ -31,7 +31,7 @@ namespace Project.Model
          		         	/// <summary>
 		        /// IsReady
 		        /// </summary>
-		     		        		public Nullable<bool> IsReady  { get; set; }
+		     		        		public Nullable<decimal> IsReady  { get; set; }
 	        		        	
          	    	    }
 }

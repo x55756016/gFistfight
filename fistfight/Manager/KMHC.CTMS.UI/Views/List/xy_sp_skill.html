@@ -58,8 +58,10 @@
                                 	                                	                                                                 	                                                                    		<td>{{x.SkillGainValue}}</td>
                                 	                                	                                                                 	                                                                    		<td>{{x.ExpendType}}</td>
                                 	                                	                                                                 	                                                                    		<td>{{x.ExpendValue}}</td>
-                                	                                	                                                                 	                                                                    		<td>{{x.isGroupinjury}}</td>
-                                	                                	                                                                 	                                                                    		<td>{{x.injuryCount}}</td>
+                                	                                	                                                                 	                                    							        	<td ng-if="x.isGroupinjury===true">是</td>
+							        	<td ng-if="x.isGroupinjury===false">否</td>
+							        	<!--<td ng-if="x.isGroupinjury===null>">否</td>-->
+									                                	                                                                 	                                                                    		<td>{{x.injuryCount}}</td>
                                 	                                	                                                                 	                                                                    		<td>{{x.NeedLevel}}</td>
                                 	                                	                                                                <td><a href="javascript:void(0);" ng-click="Edit(x)">编辑</a> <a href="javascript:void(0);" ng-click="Remove(x)">删除</a></td>
                             </tr>

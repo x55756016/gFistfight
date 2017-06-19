@@ -29,6 +29,8 @@ namespace Project.DAL.Database
         public DbSet<xy_sp_chapter> xy_sp_chapter { get; set; }
         public DbSet<xy_sp_equipment> xy_sp_equipment { get; set; }
         public DbSet<xy_sp_map> xy_sp_map { get; set; }
+        public DbSet<xy_sp_outfit> xy_sp_outfit { get; set; }
+        public DbSet<xy_sp_outfitequipment> xy_sp_outfitequipment { get; set; }
         public DbSet<xy_sp_skill> xy_sp_skill { get; set; }
         public DbSet<xy_sp_spirit> xy_sp_spirit { get; set; }
         public DbSet<xy_sp_spiritequipment> xy_sp_spiritequipment { get; set; }
@@ -36,7 +38,6 @@ namespace Project.DAL.Database
         public DbSet<xy_sp_task> xy_sp_task { get; set; }
         public DbSet<xy_sp_taskoption> xy_sp_taskoption { get; set; }
         public DbSet<xy_sp_taskspirit> xy_sp_taskspirit { get; set; }
-        public DbSet<xy_sp_userinfo> xy_sp_userinfo { get; set; }
         public DbSet<xy_sp_userspirit> xy_sp_userspirit { get; set; }
     }
 }

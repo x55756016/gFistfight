@@ -8,6 +8,8 @@
  		        	, 'xy_sp_chapter'
  		        	, 'xy_sp_equipment'
  		        	, 'xy_sp_map'
+ 		        	, 'xy_sp_outfit'
+ 		        	, 'xy_sp_outfitequipment'
  		        	, 'xy_sp_skill'
  		        	, 'xy_sp_spirit'
  		        	, 'xy_sp_spiritequipment'

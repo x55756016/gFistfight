@@ -52,9 +52,14 @@
 		            	           		        			            <div class="form-group">
 		                <label class="col-md-1 control-label" for="txtisGroupinjury">  是否群体伤害技能</label>                
 		                			                	<div class="col-md-5">
-		                    	<input type="text" class="form-control" id="txtisGroupinjury" ng-model="Info.isGroupinjury"  />
-		                    </div>
-		                    		            </div>
+			                	<select class="form-control" id="txtisGroupinjury" ng-model="Info.isGroupinjury">	
+			                		<option value="">请选择</option>
+			                		<option ng-repeat="c in SelectInfo" value="{{c.value}}">
+			                                {{c.text}}
+			                    	</option>
+			   					</select>   
+							</div>	   					
+		   							            </div>
 		            	           		        			            <div class="form-group">
 		                <label class="col-md-1 control-label" for="txtinjuryCount">  最大伤害个数</label>                
 		                			                	<div class="col-md-5">

@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Server\XiYouServerMonitor" Label="XiYouServerMonitor" Category="项目" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Newtonsoft.Json 5.0.8" Label="Newtonsoft.Json 5.0.8" Category="包" />
+    <Node Id="SuperWebSocket 0.9.0.2" Label="SuperWebSocket 0.9.0.2" Category="包" />
+    <Node Id="Manager\Project.UI" Label="Project.UI" Category="项目" />
+    <Node Id="angularjs 1.4.3" Label="angularjs 1.4.3" Category="包" />
+    <Node Id="Antlr 3.5.0.2" Label="Antlr 3.5.0.2" Category="包" />
+    <Node Id="bootstrap 3.3.5" Label="bootstrap 3.3.5" Category="包" />
+    <Node Id="EntityFramework 6.1.3" Label="EntityFramework 6.1.3" Category="包" />
+    <Node Id="EntityFramework.Extended 6.1.0.168" Label="EntityFramework.Extended 6.1.0.168" Category="包" />
+    <Node Id="iTextSharp 5.5.6" Label="iTextSharp 5.5.6" Category="包" />
+    <Node Id="jQuery 2.1.4" Label="jQuery 2.1.4" Category="包" />
+    <Node Id="jQuery.UI.Combined 1.11.4" Label="jQuery.UI.Combined 1.11.4" Category="包" />
+    <Node Id="jQuery.Validation 1.14.0" Label="jQuery.Validation 1.14.0" Category="包" />
+    <Node Id="knockoutjs 3.3.0" Label="knockoutjs 3.3.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.3" Label="Microsoft.AspNet.Mvc 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.Core 2.0.0" Label="Microsoft.AspNet.Providers.Core 2.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 2.0.0" Label="Microsoft.AspNet.Providers.LocalDB 2.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.3" Label="Microsoft.AspNet.Razor 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.3" Label="Microsoft.AspNet.Web.Optimization 1.1.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.2.3" Label="Microsoft.AspNet.WebApi 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Label="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.OData 5.5.1" Label="Microsoft.AspNet.WebApi.OData 5.5.1" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Tracing 5.2.3" Label="Microsoft.AspNet.WebApi.Tracing 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.3" Label="Microsoft.AspNet.WebPages 3.2.3" Category="包" />
+    <Node Id="Microsoft.Bcl.Build 1.0.21" Label="Microsoft.Bcl.Build 1.0.21" Category="包" />
+    <Node Id="Microsoft.Data.Edm 5.6.4" Label="Microsoft.Data.Edm 5.6.4" Category="包" />
+    <Node Id="Microsoft.Data.OData 5.6.4" Label="Microsoft.Data.OData 5.6.4" Category="包" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 3.2.3" Label="Microsoft.jQuery.Unobtrusive.Ajax 3.2.3" Category="包" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 3.2.3" Label="Microsoft.jQuery.Unobtrusive.Validation 3.2.3" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Modernizr 2.8.3" Label="Modernizr 2.8.3" Category="包" />
+    <Node Id="Newtonsoft.Json 7.0.1" Label="Newtonsoft.Json 7.0.1" Category="包" />
+    <Node Id="System.Spatial 5.6.4" Label="System.Spatial 5.6.4" Category="包" />
+    <Node Id="WebGrease 1.6.0" Label="WebGrease 1.6.0" Category="包" />
+    <Node Id="Manager\Project.DAL" Label="Project.DAL" Category="项目" />
+    <Node Id="Codaxy.WkHtmlToPdf 0.5.3" Label="Codaxy.WkHtmlToPdf 0.5.3" Category="包" />
+    <Node Id="Common.Log 1.0.0.0" Label="Common.Log 1.0.0.0" Category="包" />
+    <Node Id="Common.Log.log4net 1.0.0.0" Label="Common.Log.log4net 1.0.0.0" Category="包" />
+    <Node Id="EntityFramework 6.1.3" Label="EntityFramework 6.1.3" Category="包" />
+    <Node Id="EntityFramework.zh-Hans 6.0.0" Label="EntityFramework.zh-Hans 6.0.0" Category="包" />
+    <Node Id="EnyimMemcached 2.13" Label="EnyimMemcached 2.13" Category="包" />
+    <Node Id="iTextSharp 5.5.6" Label="iTextSharp 5.5.6" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.3" Label="Microsoft.AspNet.Mvc 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.3" Label="Microsoft.AspNet.Razor 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.3" Label="Microsoft.AspNet.WebPages 3.2.3" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Newtonsoft.Json 7.0.1" Label="Newtonsoft.Json 7.0.1" Category="包" />
+    <Node Id="WkHtmlToXSharp 1.1.23.22" Label="WkHtmlToXSharp 1.1.23.22" Category="包" />
+    <Node Id="Manager\Project.BLL" Label="Project.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.1.3" Label="EntityFramework 6.1.3" Category="包" />
+    <Node Id="XiYou" Label="XiYou" Category="项目" />
+    <Node Id="Antlr 3.4.1.9004" Label="Antlr 3.4.1.9004" Category="包" />
+    <Node Id="bootstrap 3.0.0" Label="bootstrap 3.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.0.0" Label="Microsoft.AspNet.Mvc 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 5.0.0" Label="Microsoft.AspNet.Mvc.zh-Hans 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.0.0" Label="Microsoft.AspNet.Razor 3.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor.zh-Hans 3.0.0" Label="Microsoft.AspNet.Razor.zh-Hans 3.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.1" Label="Microsoft.AspNet.Web.Optimization 1.1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Label="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.0.0" Label="Microsoft.AspNet.WebApi 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.0.0" Label="Microsoft.AspNet.WebApi.Client 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client.zh-Hans 5.0.0" Label="Microsoft.AspNet.WebApi.Client.zh-Hans 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.0.0" Label="Microsoft.AspNet.WebApi.Core 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core.zh-Hans 5.0.0" Label="Microsoft.AspNet.WebApi.Core.zh-Hans 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.HelpPage 5.0.0" Label="Microsoft.AspNet.WebApi.HelpPage 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.0.0" Label="Microsoft.AspNet.WebApi.WebHost 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.0.0" Label="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.0.0" Label="Microsoft.AspNet.WebPages 3.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages.zh-Hans 3.0.0" Label="Microsoft.AspNet.WebPages.zh-Hans 3.0.0" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="包" />
+    <Node Id="Newtonsoft.Json 5.0.6" Label="Newtonsoft.Json 5.0.6" Category="包" />
+    <Node Id="Respond 1.2.0" Label="Respond 1.2.0" Category="包" />
+    <Node Id="WebGrease 1.5.2" Label="WebGrease 1.5.2" Category="包" />
+  </Nodes>
+  <Links>
+    <Link Source="SuperWebSocket 0.9.0.2" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="SuperWebSocket 0.9.0.2" Target="Newtonsoft.Json 5.0.8" Category="程序包依赖项" />
+    <Link Source="Server\XiYouServerMonitor" Target="SuperWebSocket 0.9.0.2" Category="安装的程序包" />
+    <Link Source="bootstrap 3.3.5" Target="jQuery 2.1.4" Category="程序包依赖项" />
+    <Link Source="EntityFramework.Extended 6.1.0.168" Target="EntityFramework 6.1.3" Category="程序包依赖项" />
+    <Link Source="jQuery.UI.Combined 1.11.4" Target="jQuery 2.1.4" Category="程序包依赖项" />
+    <Link Source="jQuery.Validation 1.14.0" Target="jQuery 2.1.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Target="Microsoft.AspNet.Mvc 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.Core 2.0.0" Target="EntityFramework 6.1.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 2.0.0" Target="Microsoft.AspNet.Providers.Core 2.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="WebGrease 1.6.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 7.0.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 7.0.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Target="Microsoft.AspNet.Mvc 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 5.5.1" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 5.5.1" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 5.5.1" Target="Microsoft.Data.OData 5.6.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Tracing 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.Data.OData 5.6.4" Target="System.Spatial 5.6.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.Data.OData 5.6.4" Target="Microsoft.Data.Edm 5.6.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 3.2.3" Target="jQuery 2.1.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 3.2.3" Target="jQuery 2.1.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 3.2.3" Target="jQuery.Validation 1.14.0" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.6.0" Target="Antlr 3.5.0.2" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.6.0" Target="Newtonsoft.Json 7.0.1" Category="程序包依赖项" />
+    <Link Source="Manager\Project.UI" Target="angularjs 1.4.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="bootstrap 3.3.5" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="EntityFramework.Extended 6.1.0.168" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="iTextSharp 5.5.6" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="jQuery.UI.Combined 1.11.4" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="knockoutjs 3.3.0" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 5.0.0" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.Providers.LocalDB 2.0.0" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.Web.Optimization 1.1.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.WebApi 5.2.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.WebApi.OData 5.5.1" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.AspNet.WebApi.Tracing 5.2.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.Bcl.Build 1.0.21" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.jQuery.Unobtrusive.Ajax 3.2.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Microsoft.jQuery.Unobtrusive.Validation 3.2.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.UI" Target="Modernizr 2.8.3" Category="安装的程序包" />
+    <Link Source="Common.Log.log4net 1.0.0.0" Target="log4net 2.0.3" Category="程序包依赖项" />
+    <Link Source="Common.Log.log4net 1.0.0.0" Target="Common.Log 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="EntityFramework.zh-Hans 6.0.0" Target="EntityFramework 6.1.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Manager\Project.DAL" Target="Codaxy.WkHtmlToPdf 0.5.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="Common.Log.log4net 1.0.0.0" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="EntityFramework.zh-Hans 6.0.0" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="EnyimMemcached 2.13" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="iTextSharp 5.5.6" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="Microsoft.AspNet.Mvc 5.2.3" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="Newtonsoft.Json 7.0.1" Category="安装的程序包" />
+    <Link Source="Manager\Project.DAL" Target="WkHtmlToXSharp 1.1.23.22" Category="安装的程序包" />
+    <Link Source="Manager\Project.BLL" Target="EntityFramework 6.1.3" Category="安装的程序包" />
+    <Link Source="Microsoft.AspNet.Mvc 5.0.0" Target="Microsoft.AspNet.WebPages 3.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.0.0" Target="Microsoft.AspNet.Razor 3.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 5.0.0" Target="Microsoft.AspNet.Mvc 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Razor.zh-Hans 3.0.0" Target="Microsoft.AspNet.Razor 3.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.1" Target="WebGrease 1.5.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Target="Microsoft.AspNet.Web.Optimization 1.1.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.0.0" Target="Microsoft.AspNet.WebApi.WebHost 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.0.0" Target="Newtonsoft.Json 5.0.6" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.0.0" Target="Newtonsoft.Json 5.0.6" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client.zh-Hans 5.0.0" Target="Microsoft.AspNet.WebApi.Client 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.0.0" Target="Microsoft.AspNet.WebApi.Client 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core.zh-Hans 5.0.0" Target="Microsoft.AspNet.WebApi.Core 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.0.0" Target="Microsoft.AspNet.WebApi.WebHost 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.0.0" Target="Microsoft.AspNet.Mvc 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.0.0" Target="Microsoft.AspNet.Razor 3.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.0.0" Target="Microsoft.AspNet.WebApi.Core 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.0.0" Target="Microsoft.AspNet.WebApi.WebHost 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.0.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.0.0" Target="Microsoft.AspNet.Razor 3.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages.zh-Hans 3.0.0" Target="Microsoft.AspNet.WebPages 3.0.0" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.5.2" Target="Antlr 3.4.1.9004" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.5.2" Target="Newtonsoft.Json 5.0.6" Category="程序包依赖项" />
+    <Link Source="XiYou" Target="bootstrap 3.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.Mvc.zh-Hans 5.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.Razor.zh-Hans 3.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.WebApi 5.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.WebApi.Client.zh-Hans 5.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.WebApi.Core.zh-Hans 5.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.WebApi.HelpPage 5.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Microsoft.AspNet.WebPages.zh-Hans 3.0.0" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Modernizr 2.6.2" Category="安装的程序包" />
+    <Link Source="XiYou" Target="Respond 1.2.0" Category="安装的程序包" />
+  </Links>
+  <Categories>
+    <Category Id="项目" />
+    <Category Id="包" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="项目" ValueLabel="True">
+      <Condition Expression="HasCategory('项目')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="程序包依赖项" ValueLabel="True">
+      <Condition Expression="HasCategory('程序包依赖项')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

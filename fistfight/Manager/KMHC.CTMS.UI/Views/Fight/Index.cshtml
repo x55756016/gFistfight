@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="../AppScripts/Client/jquery-1.10.2.min.js"></script>
+    <script src="../AppScripts/Client/ChatRoom.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2">
+            我方信息
+            <table class="table table-bordered">
+                <tr><td>姓名：咔咔咔</td></tr>
+                <tr><td>物理攻击力：10</td></tr>
+                <tr><td>物理防御力：8</td></tr>
+                <tr><td>魔法攻击力：2</td></tr>
+                <tr><td>魔法防御力：3</td></tr>
+                <tr><td>速度：10</td></tr>
+            </table>
+        </div>
+        <div class="col-md-8">
+            战斗及时信息
+        </div>
+        <div class="col-md-2">
+            敌方信息
+            <table class="table table-bordered">
+                <tr><td>怪物名称：羊头怪</td></tr>
+                <tr><td>物理攻击力：10</td></tr>
+                <tr><td>物理防御力：8</td></tr>
+                <tr><td>魔法攻击力：2</td></tr>
+                <tr><td>魔法防御力：3</td></tr>
+                <tr><td>速度：10</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">战斗结果</div>  
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr><td>金币：</td><td>+100</td></tr>
+                <tr><td>经验：</td><td>+100</td></tr>
+                <tr><td>装备：</td><td>木屐；桃木剑</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">聊天信息</h3>
+                <input type="hidden" id="displayname" />
+            </div>
+            <div class="panel-body">
+                <ul id="discussionBoard"></ul>
+            </div>
+            <div class="panel-footer">
+                <div class="panel-body">
+                    <div class="col-md-10">
+                        <input type="text" id="message"/>
+                    </div>
+                    <div class="col-md-1"><p><a id="sendmessage" class="btn btn-primary btn-large">发送</a></p></div>
+                    <div class="col-md-1"><p><a href="~/Personal" class="btn btn-primary btn-large">返回</a></p></div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

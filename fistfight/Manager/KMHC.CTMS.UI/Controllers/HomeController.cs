@@ -13,6 +13,7 @@ namespace Project.UI.Controllers
         public ActionResult Index()
         {
             ViewBag.para = "";
+            ViewBag.LoginName = "admin";
             HttpCookie cookie = Request.Cookies["Token"];
             if (cookie != null)
             {

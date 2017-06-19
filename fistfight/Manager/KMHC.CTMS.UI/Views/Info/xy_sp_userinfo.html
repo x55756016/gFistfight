@@ -130,9 +130,14 @@
 		            	           		        			            <div class="form-group">
 		                <label class="col-md-1 control-label" for="txtIsDeleted">  是否删除</label>                
 		                			                	<div class="col-md-5">
-		                    	<input type="text" class="form-control" id="txtIsDeleted" ng-model="Info.IsDeleted"  />
-		                    </div>
-		                    		            </div>
+			                	<select class="form-control" id="txtIsDeleted" ng-model="Info.IsDeleted">	
+			                		<option value="">请选择</option>
+			                		<option ng-repeat="c in SelectInfo" value="{{c.value}}">
+			                                {{c.text}}
+			                    	</option>
+			   					</select>   
+							</div>	   					
+		   							            </div>
 		            	           		            <div class="form-group">
 	                <div class="col-md-2 col-md-offset-1">
 	                    <button type="button" class="btn btn-info btn-block" ng-click="GoBack()"><i class="fa fa-fw fa-reply-all"></i>返回</button>

@@ -44,6 +44,7 @@
           <Property Name="gainType" Type="decimal" Precision="10" Scale="0" />
           <Property Name="gainValue" Type="decimal" Precision="10" Scale="0" />
           <Property Name="NeedLevel" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="xy_sp_map">
           <Key>
@@ -55,6 +56,26 @@
           <Property Name="AddrX" Type="decimal" Precision="10" Scale="0" />
           <Property Name="AddrY" Type="decimal" Precision="10" Scale="0" />
           <Property Name="FatherAddrID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="xy_sp_outfit">
+          <Key>
+            <PropertyRef Name="OutfitID" />
+          </Key>
+          <Property Name="OutfitID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EquipmentName" Type="varchar" MaxLength="200" />
+          <Property Name="NeedLevel" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="xy_sp_outfitequipment">
+          <Key>
+            <PropertyRef Name="OutfitEquipmentID" />
+          </Key>
+          <Property Name="OutfitEquipmentID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OutfitID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EquipmentID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EquipmentType" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="gainType" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="gainValue" Type="decimal" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="xy_sp_skill">
           <Key>
@@ -68,7 +89,7 @@
           <Property Name="SkillGainValue" Type="decimal" Precision="10" Scale="0" />
           <Property Name="ExpendType" Type="varchar" MaxLength="50" />
           <Property Name="ExpendValue" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="isGroupinjury" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="isGroupinjury" Type="decimal" Precision="1" Scale="0" />
           <Property Name="injuryCount" Type="decimal" Precision="10" Scale="0" />
           <Property Name="NeedLevel" Type="decimal" Precision="10" Scale="0" />
         </EntityType>
@@ -104,18 +125,26 @@
           <Property Name="SpiritSkillID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SpiritID" Type="varchar" MaxLength="50" />
           <Property Name="SkillID" Type="varchar" MaxLength="50" />
-          <Property Name="IsReady" Type="bool" />
+          <Property Name="IsReady" Type="decimal" Precision="1" Scale="0" />
         </EntityType>
         <EntityType Name="xy_sp_task">
           <Key>
-            <PropertyRef Name="chapterID" />
+            <PropertyRef Name="TaskID" />
           </Key>
-          <Property Name="chapterID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TaskID" Type="varchar" MaxLength="50" />
+          <Property Name="TaskID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddrID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddrName" Type="varchar" MaxLength="200" />
+          <Property Name="AddrX" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="AddrY" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="chapterID" Type="varchar" MaxLength="50" />
+          <Property Name="chapterName" Type="varchar" MaxLength="200" />
           <Property Name="TaskName" Type="varchar" MaxLength="500" />
           <Property Name="TaskDescript" Type="varchar" MaxLength="2000" />
           <Property Name="NpcName" Type="varchar" MaxLength="200" />
-          <Property Name="IsBattleTask" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="IsBattleTask" Type="decimal" Precision="1" Scale="0" />
+          <Property Name="IsOptionTask" Type="decimal" Precision="1" Scale="0" />
+          <Property Name="NextTaskID" Type="varchar" MaxLength="50" />
+          <Property Name="PreviousTaskID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="xy_sp_taskoption">
           <Key>
@@ -124,7 +153,7 @@
           <Property Name="OptionID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="OptionName" Type="varchar" MaxLength="500" />
           <Property Name="OptionDesc" Type="varchar" MaxLength="2000" />
-          <Property Name="IsCorrect" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="IsCorrect" Type="decimal" Precision="1" Scale="0" />
           <Property Name="NextTaskID" Type="varchar" MaxLength="50" />
           <Property Name="PreviousTaskID" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -135,33 +164,7 @@
           <Property Name="UserSpiritID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UserId" Type="varchar" MaxLength="50" />
           <Property Name="SpiritID" Type="varchar" MaxLength="50" />
-          <Property Name="isBoos" Type="decimal" Precision="10" Scale="0" />
-        </EntityType>
-        <EntityType Name="xy_sp_userinfo">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LoginName" Type="varchar" MaxLength="100" />
-          <Property Name="UserName" Type="varchar" MaxLength="100" />
-          <Property Name="LoginPwd" Type="varchar" MaxLength="100" />
-          <Property Name="MobilePhone" Type="varchar" MaxLength="15" />
-          <Property Name="Email" Type="varchar" MaxLength="100" />
-          <Property Name="UserType" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="UserStatus" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="MemberID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="MemberStartDate" Type="datetime" Precision="0" />
-          <Property Name="MemberEndDate" Type="datetime" Precision="0" />
-          <Property Name="Account" Type="decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="ICONPATH" Type="varchar" MaxLength="200" />
-          <Property Name="CreateUserName" Type="varchar" MaxLength="100" />
-          <Property Name="EditUserName" Type="varchar" MaxLength="100" />
-          <Property Name="OwnerName" Type="varchar" MaxLength="100" />
-          <Property Name="CreateUserId" Type="varchar" MaxLength="100" />
-          <Property Name="CreateDateTime" Type="datetime" Precision="0" />
-          <Property Name="EditUserId" Type="varchar" MaxLength="100" />
-          <Property Name="EditDateTime" Type="datetime" Precision="0" />
-          <Property Name="IsDeleted" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="isBoos" Type="decimal" Precision="1" Scale="0" />
         </EntityType>
         <EntityType Name="xy_sp_userspirit">
           <Key>
@@ -190,6 +193,8 @@
           <EntitySet Name="xy_sp_chapter" EntityType="Self.xy_sp_chapter" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_equipment" EntityType="Self.xy_sp_equipment" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_map" EntityType="Self.xy_sp_map" Schema="xiyou" store:Type="Tables" />
+          <EntitySet Name="xy_sp_outfit" EntityType="Self.xy_sp_outfit" Schema="xiyou" store:Type="Tables" />
+          <EntitySet Name="xy_sp_outfitequipment" EntityType="Self.xy_sp_outfitequipment" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_skill" EntityType="Self.xy_sp_skill" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_spirit" EntityType="Self.xy_sp_spirit" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_spiritequipment" EntityType="Self.xy_sp_spiritequipment" Schema="xiyou" store:Type="Tables" />
@@ -197,7 +202,6 @@
           <EntitySet Name="xy_sp_task" EntityType="Self.xy_sp_task" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_taskoption" EntityType="Self.xy_sp_taskoption" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_taskspirit" EntityType="Self.xy_sp_taskspirit" Schema="xiyou" store:Type="Tables" />
-          <EntitySet Name="xy_sp_userinfo" EntityType="Self.xy_sp_userinfo" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_userspirit" EntityType="Self.xy_sp_userspirit" Schema="xiyou" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -209,6 +213,8 @@
           <EntitySet Name="xy_sp_chapter" EntityType="tmpmModel.xy_sp_chapter" />
           <EntitySet Name="xy_sp_equipment" EntityType="tmpmModel.xy_sp_equipment" />
           <EntitySet Name="xy_sp_map" EntityType="tmpmModel.xy_sp_map" />
+          <EntitySet Name="xy_sp_outfit" EntityType="tmpmModel.xy_sp_outfit" />
+          <EntitySet Name="xy_sp_outfitequipment" EntityType="tmpmModel.xy_sp_outfitequipment" />
           <EntitySet Name="xy_sp_skill" EntityType="tmpmModel.xy_sp_skill" />
           <EntitySet Name="xy_sp_spirit" EntityType="tmpmModel.xy_sp_spirit" />
           <EntitySet Name="xy_sp_spiritequipment" EntityType="tmpmModel.xy_sp_spiritequipment" />
@@ -216,7 +222,6 @@
           <EntitySet Name="xy_sp_task" EntityType="tmpmModel.xy_sp_task" />
           <EntitySet Name="xy_sp_taskoption" EntityType="tmpmModel.xy_sp_taskoption" />
           <EntitySet Name="xy_sp_taskspirit" EntityType="tmpmModel.xy_sp_taskspirit" />
-          <EntitySet Name="xy_sp_userinfo" EntityType="tmpmModel.xy_sp_userinfo" />
           <EntitySet Name="xy_sp_userspirit" EntityType="tmpmModel.xy_sp_userspirit" />
         </EntityContainer>
         <EntityType Name="tm_pm_userinfo">
@@ -258,6 +263,7 @@
           <Property Name="gainType" Type="Decimal" />
           <Property Name="gainValue" Type="Decimal" />
           <Property Name="NeedLevel" Type="Decimal" />
+          <Property Name="Price" Type="Decimal" />
         </EntityType>
         <EntityType Name="xy_sp_map">
           <Key>
@@ -269,6 +275,26 @@
           <Property Name="AddrX" Type="Decimal" />
           <Property Name="AddrY" Type="Decimal" />
           <Property Name="FatherAddrID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="xy_sp_outfit">
+          <Key>
+            <PropertyRef Name="OutfitID" />
+          </Key>
+          <Property Name="OutfitID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NeedLevel" Type="Decimal" />
+          <Property Name="Price" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="xy_sp_outfitequipment">
+          <Key>
+            <PropertyRef Name="OutfitEquipmentID" />
+          </Key>
+          <Property Name="OutfitEquipmentID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OutfitID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentType" Type="Decimal" />
+          <Property Name="gainType" Type="Decimal" />
+          <Property Name="gainValue" Type="Decimal" />
         </EntityType>
         <EntityType Name="xy_sp_skill">
           <Key>
@@ -318,18 +344,26 @@
           <Property Name="SpiritSkillID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SkillID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsReady" Type="Boolean" />
+          <Property Name="IsReady" Type="Decimal" />
         </EntityType>
         <EntityType Name="xy_sp_task">
           <Key>
-            <PropertyRef Name="chapterID" />
+            <PropertyRef Name="TaskID" />
           </Key>
-          <Property Name="chapterID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaskID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddrID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddrName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AddrX" Type="Decimal" />
+          <Property Name="AddrY" Type="Decimal" />
+          <Property Name="chapterID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="chapterName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="TaskName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="TaskDescript" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="NpcName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="IsBattleTask" Type="Decimal" />
+          <Property Name="IsOptionTask" Type="Decimal" />
+          <Property Name="NextTaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PreviousTaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="xy_sp_taskoption">
           <Key>
@@ -350,32 +384,6 @@
           <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="isBoos" Type="Decimal" />
-        </EntityType>
-        <EntityType Name="xy_sp_userinfo">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LoginName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="LoginPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="MobilePhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UserType" Type="Decimal" />
-          <Property Name="UserStatus" Type="Decimal" />
-          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MemberStartDate" Type="DateTime" />
-          <Property Name="MemberEndDate" Type="DateTime" />
-          <Property Name="Account" Type="Decimal" Nullable="false" />
-          <Property Name="ICONPATH" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="CreateUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CreateUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CreateDateTime" Type="DateTime" />
-          <Property Name="EditUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDateTime" Type="DateTime" />
-          <Property Name="IsDeleted" Type="Decimal" />
         </EntityType>
         <EntityType Name="xy_sp_userspirit">
           <Key>
@@ -399,7 +407,7 @@
           <Property Name="Spiritspeed" Type="Decimal" />
           <Property Name="CurrentTaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -439,6 +447,7 @@
           <EntitySetMapping Name="xy_sp_equipment">
             <EntityTypeMapping TypeName="tmpmModel.xy_sp_equipment">
               <MappingFragment StoreEntitySet="xy_sp_equipment">
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="NeedLevel" ColumnName="NeedLevel" />
                 <ScalarProperty Name="gainValue" ColumnName="gainValue" />
                 <ScalarProperty Name="gainType" ColumnName="gainType" />
@@ -457,6 +466,28 @@
                 <ScalarProperty Name="AddrDescript" ColumnName="AddrDescript" />
                 <ScalarProperty Name="AddrName" ColumnName="AddrName" />
                 <ScalarProperty Name="AddrID" ColumnName="AddrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xy_sp_outfit">
+            <EntityTypeMapping TypeName="tmpmModel.xy_sp_outfit">
+              <MappingFragment StoreEntitySet="xy_sp_outfit">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NeedLevel" ColumnName="NeedLevel" />
+                <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+                <ScalarProperty Name="OutfitID" ColumnName="OutfitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xy_sp_outfitequipment">
+            <EntityTypeMapping TypeName="tmpmModel.xy_sp_outfitequipment">
+              <MappingFragment StoreEntitySet="xy_sp_outfitequipment">
+                <ScalarProperty Name="gainValue" ColumnName="gainValue" />
+                <ScalarProperty Name="gainType" ColumnName="gainType" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="OutfitID" ColumnName="OutfitID" />
+                <ScalarProperty Name="OutfitEquipmentID" ColumnName="OutfitEquipmentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -517,12 +548,20 @@
           <EntitySetMapping Name="xy_sp_task">
             <EntityTypeMapping TypeName="tmpmModel.xy_sp_task">
               <MappingFragment StoreEntitySet="xy_sp_task">
+                <ScalarProperty Name="PreviousTaskID" ColumnName="PreviousTaskID" />
+                <ScalarProperty Name="NextTaskID" ColumnName="NextTaskID" />
+                <ScalarProperty Name="IsOptionTask" ColumnName="IsOptionTask" />
                 <ScalarProperty Name="IsBattleTask" ColumnName="IsBattleTask" />
                 <ScalarProperty Name="NpcName" ColumnName="NpcName" />
                 <ScalarProperty Name="TaskDescript" ColumnName="TaskDescript" />
                 <ScalarProperty Name="TaskName" ColumnName="TaskName" />
-                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="chapterName" ColumnName="chapterName" />
                 <ScalarProperty Name="chapterID" ColumnName="chapterID" />
+                <ScalarProperty Name="AddrY" ColumnName="AddrY" />
+                <ScalarProperty Name="AddrX" ColumnName="AddrX" />
+                <ScalarProperty Name="AddrName" ColumnName="AddrName" />
+                <ScalarProperty Name="AddrID" ColumnName="AddrID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -545,33 +584,6 @@
                 <ScalarProperty Name="SpiritID" ColumnName="SpiritID" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="xy_sp_userinfo">
-            <EntityTypeMapping TypeName="tmpmModel.xy_sp_userinfo">
-              <MappingFragment StoreEntitySet="xy_sp_userinfo">
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
-                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
-                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
-                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
-                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
-                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
-                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
-                <ScalarProperty Name="ICONPATH" ColumnName="ICONPATH" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
-                <ScalarProperty Name="MemberEndDate" ColumnName="MemberEndDate" />
-                <ScalarProperty Name="MemberStartDate" ColumnName="MemberStartDate" />
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
-                <ScalarProperty Name="UserType" ColumnName="UserType" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
-                <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

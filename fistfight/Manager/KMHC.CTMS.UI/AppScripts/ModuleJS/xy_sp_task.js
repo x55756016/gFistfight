@@ -29,14 +29,14 @@ app.controller('xy_sp_taskCtrl', ['$scope', '$http', '$filter','$location', '$ro
             
             //编辑
             $scope.Edit = function (obj) {
-                $location.url('/Editxy_sp_task?id='+ obj.chapterID);
+                $location.url('/Editxy_sp_task?id='+ obj.TaskID);
             };
 			
 			//删除
             $scope.Remove = function (obj) {
                 if (!confirm('确认删除？')) return;
 
-                $http.delete('/Api/xy_sp_task?id=' + obj.chapterID).success(function (data) {
+                $http.delete('/Api/xy_sp_task?id=' + obj.TaskID).success(function (data) {
                     if (data != "ok") {
                         alert('删除失败');
                     } else {

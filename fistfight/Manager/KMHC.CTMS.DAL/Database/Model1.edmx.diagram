@@ -4,19 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f8658e69c1904df09359287a08e36952" Name="Diagram1" ZoomLevel="70">
+      <Diagram DiagramId="f8658e69c1904df09359287a08e36952" Name="Diagram1" ZoomLevel="45">
         <EntityTypeShape EntityType="tmpmModel.tm_pm_userinfo" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="tmpmModel.xy_sp_chapter" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="tmpmModel.xy_sp_equipment" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="tmpmModel.xy_sp_map" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="tmpmModel.xy_sp_skill" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="tmpmModel.xy_sp_spirit" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="tmpmModel.xy_sp_spiritequipment" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="tmpmModel.xy_sp_spiritskill" Width="1.5" PointX="6.75" PointY="5.75" />
-        <EntityTypeShape EntityType="tmpmModel.xy_sp_task" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_outfit" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_outfitequipment" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_skill" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_spirit" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_spiritequipment" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_spiritskill" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="tmpmModel.xy_sp_task" Width="1.5" PointX="6.75" PointY="7.75" />
         <EntityTypeShape EntityType="tmpmModel.xy_sp_taskoption" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="tmpmModel.xy_sp_taskspirit" Width="1.5" PointX="8.75" PointY="3.75" />
-        <EntityTypeShape EntityType="tmpmModel.xy_sp_userinfo" Width="1.5" PointX="4.75" PointY="8.75" />
         <EntityTypeShape EntityType="tmpmModel.xy_sp_userspirit" Width="1.5" PointX="8.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>

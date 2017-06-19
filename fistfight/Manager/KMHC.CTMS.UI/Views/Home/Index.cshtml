@@ -1,14 +1,17 @@
 ﻿
 <!DOCTYPE html>
+@{
+    //Layout = null;
+ }
 <html ng-app="userApp">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="pragma" content="no-cache" />
-    <title>@ViewBag.Title</title>
-    @System.Web.Optimization.Styles.Render("~/Content/css")
-    @System.Web.Optimization.Scripts.Render("~/Script/bootstrap")
+    <title></title>
+    @System.Web.Optimization.Styles.Render("~/Content/css") 
+    @System.Web.Optimization.Styles.Render("~/Content/sb-admin")
 </head>
 <body ng-controller="MyController">
     <div id="wrapper">
@@ -22,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#/"><strong>xiyou管理平台</strong></a>
+                <a class="navbar-brand" href="/#/"><strong>康美健康云肿瘤全程管理平台</strong></a>
             </div>
 
             <!-- 右侧用户信息菜单 -->
@@ -44,6 +47,8 @@
                     <li><a href="#/xy_sp_chapter"><i class="icon-list"></i> xy_sp_chapter</a></li>
                     <li><a href="#/xy_sp_equipment"><i class="icon-list"></i> xy_sp_equipment</a></li>
                     <li><a href="#/xy_sp_map"><i class="icon-list"></i> xy_sp_map</a></li>
+                    <li><a href="#/xy_sp_outfit"><i class="icon-list"></i> xy_sp_outfit</a></li>
+                    <li><a href="#/xy_sp_outfitequipment"><i class="icon-list"></i> xy_sp_outfitequipment</a></li>
                     <li><a href="#/xy_sp_skill"><i class="icon-list"></i> xy_sp_skill</a></li>
                     <li><a href="#/xy_sp_spirit"><i class="icon-list"></i> xy_sp_spirit</a></li>
                     <li><a href="#/xy_sp_spiritequipment"><i class="icon-list"></i> xy_sp_spiritequipment</a></li>
@@ -71,6 +76,10 @@
 
     </div>
     <!-- /#wrapper -->
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
     @System.Web.Optimization.Scripts.Render("~/Script/angular")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/Script/bootstrap_control")
+    
 </body>
 </html>
