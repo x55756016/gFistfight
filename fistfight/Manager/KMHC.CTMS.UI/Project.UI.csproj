@@ -224,6 +224,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppScripts\Client\ChatRoom.js" />
+    <Content Include="AppScripts\Client\UserTask.js" />
+    <Content Include="AppScripts\Client\jquery-1.10.2.min.js" />
     <Content Include="AppScripts\common\common.js" />
     <Content Include="AppScripts\common\navi-controllers.js" />
     <Content Include="AppScripts\common\pager.js" />
