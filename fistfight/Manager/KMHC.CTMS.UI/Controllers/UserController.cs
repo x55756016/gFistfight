@@ -101,7 +101,7 @@ namespace Project.UI.Controllers
                 tokenCookie.Path = "/";
                 Response.AppendCookie(tokenCookie);
 
-                return Json(new { Status = 1, Data = tokenValue, Msg = string.Empty });
+                return Json(new { Status = 1, Data = userInfo, Msg = string.Empty });
             }
             catch (Exception ex)
             {

@@ -2,10 +2,10 @@
     //Set the hubs URL for the connection
     var url = "ws://localhost:2014";
     var ws = null;
-    $('#displayname').val(prompt('Enter your name:', ''));
+    //$('#displayname').val(prompt('Enter your name:', ''));
+    //var name = $('#displayname').val;
 
-    var name = $('#displayname').val;
-    var fullUrl = url + "/" + name;
+    var fullUrl = url;
 
     if ("WebSocket" in window) {
         ws = new WebSocket(fullUrl);

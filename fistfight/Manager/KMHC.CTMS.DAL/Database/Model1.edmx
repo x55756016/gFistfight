@@ -162,9 +162,35 @@
             <PropertyRef Name="UserSpiritID" />
           </Key>
           <Property Name="UserSpiritID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="TaskID" Type="varchar" MaxLength="50" />
           <Property Name="SpiritID" Type="varchar" MaxLength="50" />
           <Property Name="isBoos" Type="decimal" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="xy_sp_userinfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoginName" Type="varchar" MaxLength="100" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="LoginPwd" Type="varchar" MaxLength="100" />
+          <Property Name="MobilePhone" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="UserType" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="UserStatus" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="MemberID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberStartDate" Type="datetime" Precision="0" />
+          <Property Name="MemberEndDate" Type="datetime" Precision="0" />
+          <Property Name="Account" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ICONPATH" Type="varchar" MaxLength="200" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="100" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="100" />
+          <Property Name="OwnerName" Type="varchar" MaxLength="100" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="100" />
+          <Property Name="CreateDateTime" Type="datetime" Precision="0" />
+          <Property Name="EditUserId" Type="varchar" MaxLength="100" />
+          <Property Name="EditDateTime" Type="datetime" Precision="0" />
+          <Property Name="IsDeleted" Type="decimal" Precision="1" Scale="0" />
         </EntityType>
         <EntityType Name="xy_sp_userspirit">
           <Key>
@@ -188,6 +214,26 @@
           <Property Name="Spiritspeed" Type="decimal" Precision="10" Scale="0" />
           <Property Name="CurrentTaskID" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="XY_SP_UserSpiritEquipment">
+          <Key>
+            <PropertyRef Name="SpiritEquipment" />
+          </Key>
+          <Property Name="SpiritEquipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserSpiritID" Type="varchar" MaxLength="50" />
+          <Property Name="EquipmentID" Type="varchar" MaxLength="50" />
+          <Property Name="LostRate" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="XY_SP_UserSpiritSkill">
+          <Key>
+            <PropertyRef Name="SpiritSkillID" />
+          </Key>
+          <Property Name="SpiritSkillID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserSpiritID" Type="varchar" MaxLength="50" />
+          <Property Name="SkillID" Type="varchar" MaxLength="50" />
+          <Property Name="SkillLevel" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="HarmAdd" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="IsReady" Type="decimal" Precision="1" Scale="0" />
+        </EntityType>
         <EntityContainer Name="tmpmModelStoreContainer">
           <EntitySet Name="tm_pm_userinfo" EntityType="Self.tm_pm_userinfo" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_chapter" EntityType="Self.xy_sp_chapter" Schema="xiyou" store:Type="Tables" />
@@ -202,7 +248,10 @@
           <EntitySet Name="xy_sp_task" EntityType="Self.xy_sp_task" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_taskoption" EntityType="Self.xy_sp_taskoption" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_taskspirit" EntityType="Self.xy_sp_taskspirit" Schema="xiyou" store:Type="Tables" />
+          <EntitySet Name="xy_sp_userinfo" EntityType="Self.xy_sp_userinfo" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_userspirit" EntityType="Self.xy_sp_userspirit" Schema="xiyou" store:Type="Tables" />
+          <EntitySet Name="XY_SP_UserSpiritEquipment" EntityType="Self.XY_SP_UserSpiritEquipment" Schema="xiyou" store:Type="Tables" />
+          <EntitySet Name="XY_SP_UserSpiritSkill" EntityType="Self.XY_SP_UserSpiritSkill" Schema="xiyou" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -222,7 +271,10 @@
           <EntitySet Name="xy_sp_task" EntityType="tmpmModel.xy_sp_task" />
           <EntitySet Name="xy_sp_taskoption" EntityType="tmpmModel.xy_sp_taskoption" />
           <EntitySet Name="xy_sp_taskspirit" EntityType="tmpmModel.xy_sp_taskspirit" />
+          <EntitySet Name="xy_sp_userinfo" EntityType="tmpmModel.xy_sp_userinfo" />
           <EntitySet Name="xy_sp_userspirit" EntityType="tmpmModel.xy_sp_userspirit" />
+          <EntitySet Name="XY_SP_UserSpiritEquipment" EntityType="tmpmModel.XY_SP_UserSpiritEquipment" />
+          <EntitySet Name="XY_SP_UserSpiritSkill" EntityType="tmpmModel.XY_SP_UserSpiritSkill" />
         </EntityContainer>
         <EntityType Name="tm_pm_userinfo">
           <Key>
@@ -381,9 +433,35 @@
             <PropertyRef Name="UserSpiritID" />
           </Key>
           <Property Name="UserSpiritID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="isBoos" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="xy_sp_userinfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LoginName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LoginPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobilePhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="Decimal" />
+          <Property Name="UserStatus" Type="Decimal" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemberStartDate" Type="DateTime" />
+          <Property Name="MemberEndDate" Type="DateTime" />
+          <Property Name="Account" Type="Decimal" Nullable="false" />
+          <Property Name="ICONPATH" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDateTime" Type="DateTime" />
+          <Property Name="EditUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDateTime" Type="DateTime" />
+          <Property Name="IsDeleted" Type="Decimal" />
         </EntityType>
         <EntityType Name="xy_sp_userspirit">
           <Key>
@@ -406,6 +484,26 @@
           <Property Name="MagicHarm" Type="Decimal" />
           <Property Name="Spiritspeed" Type="Decimal" />
           <Property Name="CurrentTaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="XY_SP_UserSpiritEquipment">
+          <Key>
+            <PropertyRef Name="SpiritEquipment" />
+          </Key>
+          <Property Name="SpiritEquipment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserSpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LostRate" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="XY_SP_UserSpiritSkill">
+          <Key>
+            <PropertyRef Name="SpiritSkillID" />
+          </Key>
+          <Property Name="SpiritSkillID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserSpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SkillID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SkillLevel" Type="Decimal" />
+          <Property Name="HarmAdd" Type="Decimal" />
+          <Property Name="IsReady" Type="Decimal" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -582,8 +680,35 @@
               <MappingFragment StoreEntitySet="xy_sp_taskspirit">
                 <ScalarProperty Name="isBoos" ColumnName="isBoos" />
                 <ScalarProperty Name="SpiritID" ColumnName="SpiritID" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
                 <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xy_sp_userinfo">
+            <EntityTypeMapping TypeName="tmpmModel.xy_sp_userinfo">
+              <MappingFragment StoreEntitySet="xy_sp_userinfo">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ICONPATH" ColumnName="ICONPATH" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="MemberEndDate" ColumnName="MemberEndDate" />
+                <ScalarProperty Name="MemberStartDate" ColumnName="MemberStartDate" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -607,6 +732,28 @@
                 <ScalarProperty Name="SpiritID" ColumnName="SpiritID" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XY_SP_UserSpiritEquipment">
+            <EntityTypeMapping TypeName="tmpmModel.XY_SP_UserSpiritEquipment">
+              <MappingFragment StoreEntitySet="XY_SP_UserSpiritEquipment">
+                <ScalarProperty Name="LostRate" ColumnName="LostRate" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
+                <ScalarProperty Name="SpiritEquipment" ColumnName="SpiritEquipment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XY_SP_UserSpiritSkill">
+            <EntityTypeMapping TypeName="tmpmModel.XY_SP_UserSpiritSkill">
+              <MappingFragment StoreEntitySet="XY_SP_UserSpiritSkill">
+                <ScalarProperty Name="IsReady" ColumnName="IsReady" />
+                <ScalarProperty Name="HarmAdd" ColumnName="HarmAdd" />
+                <ScalarProperty Name="SkillLevel" ColumnName="SkillLevel" />
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
+                <ScalarProperty Name="SpiritSkillID" ColumnName="SpiritSkillID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

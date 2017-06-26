@@ -8,6 +8,7 @@
  */
  
 using System;
+using System.Collections.Generic;
 
 namespace Project.Model
 {
@@ -82,6 +83,10 @@ namespace Project.Model
 		        /// PreviousTaskID
 		        /// </summary>
 		     		        		public string PreviousTaskID  { get; set; }
+
+
+
+                                    public List<V_xy_sp_taskspirit> Spirits { get; set; }
 	        		        	
          	    	    }
 }

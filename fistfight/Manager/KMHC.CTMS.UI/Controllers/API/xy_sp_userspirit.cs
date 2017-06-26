@@ -54,6 +54,12 @@ namespace KMHC.CTMS.UI.Controllers.API
             }
         }
 
+        public IHttpActionResult GetByUserID(string UserID)
+        {
+            V_xy_sp_userspirit model = bll.Get(p => p.UserId == UserID);
+            return Ok(model);
+        }
+
         public IHttpActionResult Get(string ID)
         {
             V_xy_sp_userspirit model = bll.Get(p=>p.UserSpiritID==ID);

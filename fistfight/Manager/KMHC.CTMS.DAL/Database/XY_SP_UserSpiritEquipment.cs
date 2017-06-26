@@ -12,11 +12,11 @@ namespace Project.DAL.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class xy_sp_taskspirit
+    public partial class XY_SP_UserSpiritEquipment
     {
+        public string SpiritEquipment { get; set; }
         public string UserSpiritID { get; set; }
-        public string TaskID { get; set; }
-        public string SpiritID { get; set; }
-        public Nullable<decimal> isBoos { get; set; }
+        public string EquipmentID { get; set; }
+        public Nullable<decimal> LostRate { get; set; }
     }
 }

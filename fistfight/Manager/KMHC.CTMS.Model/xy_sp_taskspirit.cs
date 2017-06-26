@@ -32,6 +32,9 @@ namespace Project.Model
 		        /// isBoos
 		        /// </summary>
 		     		        		public Nullable<decimal> isBoos  { get; set; }
+
+
+                                    public V_xy_sp_spirit spirit { get; set; }
 	        		        	
          	    	    }
 }

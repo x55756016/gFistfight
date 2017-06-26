@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="/AClientScripts/jquery-1.10.2.min.js"></script>
+    <script src="/AClientScripts/GameLogin.js"></script>
+</head>
+<body>
+    <div class="col-md-12">
+            <fieldset>
+                <div class="form-group">
+                    <!--<label>用户名：</label>-->
+                    <input type="text"  id="txtUserName" class="form-control" autocomplete="off" placeholder="请输入用户名" required />
+                </div>
+                <div class="form-group">
+                    <!--<label>密&nbsp;&nbsp;&nbsp;码：</label>-->
+                    <input type="password" id="txtPassword" class="form-control" autocomplete="off" placeholder=" 请输入密码" required />
+                </div>
+                <div class="checkbox">
+                    <label for="chkKeepAlive"><input type="checkbox" id="chkKeepAlive" />记住我</label>
+                    <a class="forget" data-toggle="modal" data-target="#myResetPwdModal">忘记密码?</a>
+                </div>
+                <div class="form-group">
+                    <button id="BtnGameLogin" class="btn btn-success btn-lg btn-block">登录游戏</button>
+                </div>
+                <div class="form-group">
+                    <label>还没有帐号?<a data-toggle="modal" data-target="#myRegisterModal">立即注册</a></label>
+
+                </div>
+            </fieldset>
+    </div>
+    </body>
+</html>
+
+

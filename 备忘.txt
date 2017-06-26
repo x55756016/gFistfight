@@ -6,3 +6,5 @@ lookup功能需要在动软代码生成器中实现
 3.精灵装备表 增加字段 掉落几率
 4.用户精灵表 增加字段 背包最大格数
 5.增加 用户精灵背包 表
+6.增加 用户精灵装备表 XY_SP_UserSpiritEquipment
+7. 增加 用户精灵技能表 XY_SP_UserSpiritSkill

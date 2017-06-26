@@ -49,6 +49,41 @@ namespace Project.BLL
 	            return EntityToModel(entity); 
             }
         }
+
+        /// <summary>
+        /// 获取单条数据
+        /// </summary>
+        /// <returns></returns>
+        public xy_sp_userView GetbyUserID(string UserID)
+        {
+            xy_sp_userView user = new xy_sp_userView();
+
+            using (xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL())
+            {
+
+                var q = from userInfo in dal._context.tm_pm_userinfo
+                        join userSprit in dal._context.xy_sp_userspirit on userInfo.USERID equals userSprit.UserId
+                        join Task in dal._context.xy_sp_task on userSprit.CurrentTaskID equals Task.TaskID
+                        join TaskSpirit in dal._context.xy_sp_taskspirit on Task.TaskID equals TaskSpirit.TaskID
+                        join spirit in dal._context.xy_sp_spirit on TaskSpirit.SpiritID equals spirit.SpiritID
+                        join SpiritEquipment in dal._context.xy_sp_spiritequipment on spirit.SpiritID equals SpiritEquipment.SpiritID
+                        join SpiritSkill in dal._context.xy_sp_spiritskill on spirit.SpiritID equals SpiritSkill.SpiritID
+                        join Skill in dal._context.xy_sp_skill on SpiritSkill.SkillID equals Skill.SkillID
+                        select new xy_sp_userView
+                        {
+                            //UserInfo = EntityToModel(userInfo
+                        };
+
+
+
+                xy_sp_userspirit entity = dal.GetbyUserID(UserID);
+                user.UserSpirit = EntityToModel(entity);
+                           
+
+
+                return user;
+            }
+        }
 		
         /// <summary>
         /// 获取列表

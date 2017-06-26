@@ -27,6 +27,9 @@ namespace Project.Model
 		        /// EquipmentID
 		        /// </summary>
 		     		        		public string EquipmentID  { get; set; }
+
+
+                                    public V_xy_sp_equipment equipment { get; set; }
 	        		        	
          	    	    }
 }

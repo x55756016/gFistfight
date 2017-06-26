@@ -32,6 +32,8 @@ namespace Project.Model
 		        /// IsReady
 		        /// </summary>
 		     		        		public Nullable<decimal> IsReady  { get; set; }
+
+                                    public V_xy_sp_skill skill { get; set; }
 	        		        	
          	    	    }
 }

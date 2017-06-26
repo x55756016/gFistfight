@@ -27,18 +27,18 @@ namespace Project.DAL
     /// <typeparam name="TEntity"></typeparam>
     public class BaseDAL<TEntity> : IDisposable where TEntity : class
     {
-        private readonly DbContext _context;
+        public readonly tmpmEntities2 _context;
 
 
         public BaseDAL()
         {
-            _context = new tmpmEntities2();
+            _context = new tmpmEntities2();           
         }
 
-        public BaseDAL(DbContext context)
-        {
-            _context = context;
-        }
+        //public BaseDAL(DbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public bool Insert(TEntity model)
         {

@@ -10,31 +10,45 @@
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("首页", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("商店", "Index", "Shop", null, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("论坛", "game", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    @*<div class="container body-content">*@
-        @RenderBody()
-        @*<hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>*@
-    @*</div>*@
+    <ol class="breadcrumb">
+        <li><a href="#">任务</a></li>
+        <li><a href="#">队伍</a></li>
+        <li><a href="#">角色</a></li>
+        <li><a href="#">背包</a></li>
+        <li><a href="#">好友</a></li>
+        <li><a href="#">地图</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                商城
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">买卖</a></li>
+                <li class="divider"></li>
+                <li><a href="#">摆摊</a></li>
+                <li class="divider"></li>
+                <li><a href="#">充值</a></li>
+            </ul>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                更多
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">剧情介绍</a></li>
+                <li><a href="#">优化建议</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="divider"></li>
+                <li><a href="#">分离的链接</a></li>
+                <li class="divider"></li>
+                <li><a href="#">另一个分离的链接</a></li>
+            </ul>
+        </li>
+        </li>
+    </ol>
+
+
+    @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

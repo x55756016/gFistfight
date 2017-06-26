@@ -208,6 +208,7 @@
     <Compile Include="Controllers\API\xy_sp_taskspirit.cs" />
     <Compile Include="Controllers\API\xy_sp_userspirit.cs" />
     <Compile Include="Controllers\FightController.cs" />
+    <Compile Include="Controllers\GameLoginController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
@@ -224,9 +225,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppScripts\Client\ChatRoom.js" />
-    <Content Include="AppScripts\Client\UserTask.js" />
-    <Content Include="AppScripts\Client\jquery-1.10.2.min.js" />
+    <Content Include="AClientScripts\ChatRoom.js" />
+    <Content Include="AClientScripts\GameLogin.js" />
+    <Content Include="AClientScripts\GetUserInfo.js" />
+    <Content Include="AClientScripts\UserTask.js" />
+    <Content Include="AClientScripts\jquery-1.10.2.min.js" />
     <Content Include="AppScripts\common\common.js" />
     <Content Include="AppScripts\common\navi-controllers.js" />
     <Content Include="AppScripts\common\pager.js" />
@@ -1137,6 +1140,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Areas\Game\Views\web.config" />
+    <Content Include="AClientScripts\jquery-1.10.2.min.map" />
     <None Include="Properties\PublishProfiles\HRWebUI.pubxml" />
     <None Include="Properties\PublishProfiles\web.config.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
@@ -1219,6 +1223,7 @@
     <Content Include="Views\Shop\Delete.cshtml" />
     <Content Include="Views\Shop\Details.cshtml" />
     <Content Include="Views\Shop\Edit.cshtml" />
+    <Content Include="Views\GameLogin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Game\Controllers\" />

@@ -65,5 +65,15 @@ namespace Project.DAL
         {
             return base.FindOne(predicate);
         }
+
+
+        /// <summary>
+        /// 单条数据
+        /// </summary>
+        /// <returns></returns>
+        public xy_sp_userspirit GetbyUserID(string UserID)
+        {
+            return base.FindOne(c => c.UserId == UserID);
+        }
     }
 }
