@@ -14,6 +14,12 @@ namespace Project.Model
 {
     public class V_xy_sp_spirit
     {
+        public V_xy_sp_spirit()
+        {
+            spiritEquipmentList = new List<V_xy_sp_equipment>();
+            spiritSkillList = new List<V_xy_sp_skill>();
+
+        }
         /// <summary>
         /// SpiritID
         /// </summary>
@@ -77,11 +83,11 @@ namespace Project.Model
         /// <summary>
         /// 精灵装备
         /// </summary>
-        public List<V_xy_sp_spiritequipment> spiritequipment { get; set; }
+        public List<V_xy_sp_equipment> spiritEquipmentList { get; set; }
         /// <summary>
         /// 精灵技能
         /// </summary>
-        public List<V_xy_sp_spiritskill> spiritskill { get; set; }
+        public List<V_xy_sp_skill> spiritSkillList { get; set; }
 
     }
 }

@@ -62,6 +62,7 @@
     <Compile Include="xy_sp_taskoption.cs" />
     <Compile Include="xy_sp_taskspirit.cs" />
     <Compile Include="xy_sp_userinfo.cs" />
+    <Compile Include="xy_sp_userspiritpackage.cs" />
     <Compile Include="xy_sp_userView.cs" />
     <Compile Include="xy_sp_userspirit.cs" />
   </ItemGroup>

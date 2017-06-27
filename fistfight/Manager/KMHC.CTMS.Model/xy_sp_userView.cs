@@ -11,12 +11,12 @@ using System;
 
 namespace Project.Model
 {
-    public class xy_sp_userView
+    public class V_xy_sp_userView
     {
-        public V_xy_sp_userinfo UserInfo { get; set; }
+        public V_tm_pm_userinfo User { get; set; }
 
-        public V_xy_sp_userspirit UserSpirit { get; set; }
+        public V_xy_sp_userspirit Spirit { get; set; }
 
-        public V_xy_sp_task CurrentTask { get; set; }
+        public V_xy_sp_task Task { get; set; }
     }
 }

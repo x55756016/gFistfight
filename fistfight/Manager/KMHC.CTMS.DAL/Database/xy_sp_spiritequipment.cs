@@ -17,5 +17,6 @@ namespace Project.DAL.Database
         public string SpiritEquipment { get; set; }
         public string SpiritID { get; set; }
         public string EquipmentID { get; set; }
+        public Nullable<decimal> LostRate { get; set; }
     }
 }

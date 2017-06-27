@@ -40,7 +40,6 @@ namespace Project.DAL.Database
         public DbSet<xy_sp_taskspirit> xy_sp_taskspirit { get; set; }
         public DbSet<xy_sp_userinfo> xy_sp_userinfo { get; set; }
         public DbSet<xy_sp_userspirit> xy_sp_userspirit { get; set; }
-        public DbSet<XY_SP_UserSpiritEquipment> XY_SP_UserSpiritEquipment { get; set; }
-        public DbSet<XY_SP_UserSpiritSkill> XY_SP_UserSpiritSkill { get; set; }
+        public DbSet<xy_sp_userspiritpackage> xy_sp_userspiritpackage { get; set; }
     }
 }

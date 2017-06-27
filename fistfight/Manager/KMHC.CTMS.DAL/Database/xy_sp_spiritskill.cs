@@ -16,6 +16,8 @@ namespace Project.DAL.Database
     {
         public string SpiritSkillID { get; set; }
         public string SpiritID { get; set; }
+        public Nullable<decimal> SkillLevel { get; set; }
+        public Nullable<decimal> HarmAdd { get; set; }
         public string SkillID { get; set; }
         public Nullable<decimal> IsReady { get; set; }
     }

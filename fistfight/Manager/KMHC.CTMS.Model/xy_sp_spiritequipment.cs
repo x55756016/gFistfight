@@ -12,24 +12,27 @@ using System;
 namespace Project.Model
 {
     public class V_xy_sp_spiritequipment
-    {      
-    	    			         	/// <summary>
-		        /// SpiritEquipment
-		        /// </summary>
-		     		        		public string SpiritEquipment  { get; set; }
-	        		        	
-         		         	/// <summary>
-		        /// SpiritID
-		        /// </summary>
-		     		        		public string SpiritID  { get; set; }
-	        		        	
-         		         	/// <summary>
-		        /// EquipmentID
-		        /// </summary>
-		     		        		public string EquipmentID  { get; set; }
+    {
+        /// <summary>
+        /// SpiritEquipment
+        /// </summary>
+        public string SpiritEquipment { get; set; }
 
+        /// <summary>
+        /// SpiritID
+        /// </summary>
+        public string SpiritID { get; set; }
 
-                                    public V_xy_sp_equipment equipment { get; set; }
-	        		        	
-         	    	    }
+        /// <summary>
+        /// EquipmentID
+        /// </summary>
+        public string EquipmentID { get; set; }
+
+        /// <summary>
+        /// LostRate
+        /// </summary>
+        public Nullable<decimal> LostRate { get; set; }
+        public V_xy_sp_equipment equipment { get; set; }
+
+    }
 }

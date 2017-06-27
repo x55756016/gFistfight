@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMT.Foundation.Log;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,7 @@ namespace Project.UI.Attribute
                 {
                     Data = new { Success = false, Exception = filterContext.Exception.Message.ToString() }
                 };
+                Tracer.Debug(filterContext.Exception.ToString());
                 //Todo 插入数据库
                 filterContext.ExceptionHandled = true;
                 filterContext.RequestContext.HttpContext.Response.StatusCode = 500;

@@ -63,6 +63,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\EnyimMemcached.2.13\lib\net35\Enyim.Caching.dll</HintPath>
     </Reference>
+    <Reference Include="Foundation.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dll\Foundation.Log.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
@@ -207,6 +211,7 @@
     <Compile Include="Controllers\API\xy_sp_taskoption.cs" />
     <Compile Include="Controllers\API\xy_sp_taskspirit.cs" />
     <Compile Include="Controllers\API\xy_sp_userspirit.cs" />
+    <Compile Include="Controllers\API\xy_sp_userspiritpackage.cs" />
     <Compile Include="Controllers\FightController.cs" />
     <Compile Include="Controllers\GameLoginController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
@@ -251,6 +256,7 @@
     <Content Include="AppScripts\ModuleJS\xy_sp_taskspirit.js" />
     <Content Include="AppScripts\ModuleJS\xy_sp_userinfo.js" />
     <Content Include="AppScripts\ModuleJS\xy_sp_userspirit.js" />
+    <Content Include="AppScripts\ModuleJS\xy_sp_userspiritpackage.js" />
     <Content Include="AppScripts\User\main.js" />
     <Content Include="AppScripts\Home\app.js" />
     <Content Include="Content\bootstrap-blue.css" />
@@ -1182,6 +1188,7 @@
     <Content Include="Views\Info\xy_sp_taskspirit.html" />
     <Content Include="Views\Info\xy_sp_userinfo.html" />
     <Content Include="Views\Info\xy_sp_userspirit.html" />
+    <Content Include="Views\Info\xy_sp_userspiritpackage.html" />
     <Content Include="Views\List\tm_pm_userinfo.html" />
     <Content Include="Views\List\xy_sp_chapter.html" />
     <Content Include="Views\List\xy_sp_equipment.html" />
@@ -1197,6 +1204,7 @@
     <Content Include="Views\List\xy_sp_taskspirit.html" />
     <Content Include="Views\List\xy_sp_userinfo.html" />
     <Content Include="Views\List\xy_sp_userspirit.html" />
+    <Content Include="Views\List\xy_sp_userspiritpackage.html" />
     <Content Include="Views\User\login.html" />
     <Content Include="Views\User\reset.html" />
     <Content Include="Web.config">

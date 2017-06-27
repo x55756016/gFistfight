@@ -73,6 +73,7 @@
     <Compile Include="xy_sp_taskoption.cs" />
     <Compile Include="xy_sp_taskspirit.cs" />
     <Compile Include="xy_sp_userspirit.cs" />
+    <Compile Include="xy_sp_userspiritpackage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KMHC.CTMS.Common\Project.Common.csproj">

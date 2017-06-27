@@ -31,5 +31,6 @@ namespace Project.DAL.Database
         public Nullable<decimal> MagicHarm { get; set; }
         public Nullable<decimal> Spiritspeed { get; set; }
         public string CurrentTaskID { get; set; }
+        public Nullable<decimal> Maxpackage { get; set; }
     }
 }

@@ -54,34 +54,20 @@ namespace Project.BLL
         /// 获取单条数据
         /// </summary>
         /// <returns></returns>
-        public xy_sp_userView GetbyUserID(string UserID)
+        public V_xy_sp_userView GetCurrentUserStatebyUserID(string UserID)
         {
-            xy_sp_userView user = new xy_sp_userView();
+            V_xy_sp_userView userV = new V_xy_sp_userView();
+            tm_pm_userinfoBLL ubll=new tm_pm_userinfoBLL();
+            xy_sp_userspiritBLL upbll=new xy_sp_userspiritBLL();
+            xy_sp_taskBLL tBll = new xy_sp_taskBLL();
 
             using (xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL())
             {
-
-                var q = from userInfo in dal._context.tm_pm_userinfo
-                        join userSprit in dal._context.xy_sp_userspirit on userInfo.USERID equals userSprit.UserId
-                        join Task in dal._context.xy_sp_task on userSprit.CurrentTaskID equals Task.TaskID
-                        join TaskSpirit in dal._context.xy_sp_taskspirit on Task.TaskID equals TaskSpirit.TaskID
-                        join spirit in dal._context.xy_sp_spirit on TaskSpirit.SpiritID equals spirit.SpiritID
-                        join SpiritEquipment in dal._context.xy_sp_spiritequipment on spirit.SpiritID equals SpiritEquipment.SpiritID
-                        join SpiritSkill in dal._context.xy_sp_spiritskill on spirit.SpiritID equals SpiritSkill.SpiritID
-                        join Skill in dal._context.xy_sp_skill on SpiritSkill.SkillID equals Skill.SkillID
-                        select new xy_sp_userView
-                        {
-                            //UserInfo = EntityToModel(userInfo
-                        };
-
-
-
+                userV.User = ubll.GetUserInfoByID(UserID); 
                 xy_sp_userspirit entity = dal.GetbyUserID(UserID);
-                user.UserSpirit = EntityToModel(entity);
-                           
-
-
-                return user;
+                userV.Spirit = EntityToModel(entity);
+                userV.Task = tBll.getTaskContext(entity.CurrentTaskID);
+                return userV;
             }
         }
 		
@@ -172,6 +158,7 @@ namespace Project.BLL
                                         	MagicHarm = model.MagicHarm,
                                         	Spiritspeed = model.Spiritspeed,
                                         	CurrentTaskID = model.CurrentTaskID,
+                                            Maxpackage = model.Maxpackage
                                     };
 
                 return entity;
@@ -207,6 +194,7 @@ namespace Project.BLL
                                         	MagicHarm = entity.MagicHarm,
                                         	Spiritspeed = entity.Spiritspeed,
                                         	CurrentTaskID = entity.CurrentTaskID,
+                                            Maxpackage=entity.Maxpackage
                                     };
 
                 return model;

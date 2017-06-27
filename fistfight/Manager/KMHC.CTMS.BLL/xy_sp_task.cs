@@ -108,13 +108,37 @@ namespace Project.BLL
            		return dal.Delete(id);
             }
         }
+
+        public V_xy_sp_task getTaskContext(string strTaskID)
+        {
+            using (xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL())
+            {
+                xy_sp_spiritBLL spBll = new xy_sp_spiritBLL();               
+                var q = from Task in dal._context.xy_sp_task
+                        where Task.TaskID == strTaskID
+                        select Task;
+                V_xy_sp_task task =EntityToModel(q.FirstOrDefault());
+
+                var taskSpirit = from TaskSpirit in dal._context.xy_sp_taskspirit
+                                 where TaskSpirit.TaskID == strTaskID
+                                 select TaskSpirit;
+
+                foreach (var item in taskSpirit)
+                {
+                    V_xy_sp_spirit spirit = spBll.getSpiritContextByID(item.SpiritID);                 
+
+                    task.Spirits.Add(spirit);
+                }
+                return task;
+            }
+        }
       
         /// <summary>
         /// Model转Entity
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private xy_sp_task ModelToEntity(V_xy_sp_task model)
+        public xy_sp_task ModelToEntity(V_xy_sp_task model)
         {
             if (model != null)
             {
@@ -146,27 +170,28 @@ namespace Project.BLL
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        private V_xy_sp_task  EntityToModel(xy_sp_task  entity)
+        public V_xy_sp_task EntityToModel(xy_sp_task entity)
         {
             if (entity != null)
             {
-                V_xy_sp_task  model = new V_xy_sp_task ()
+                V_xy_sp_task model = new V_xy_sp_task()
                 {
-                                       	TaskID = entity.TaskID,
-                                        	AddrID = entity.AddrID,
-                                        	AddrName = entity.AddrName,
-                                        	AddrX = entity.AddrX,
-                                        	AddrY = entity.AddrY,
-                                        	chapterID = entity.chapterID,
-                                        	chapterName = entity.chapterName,
-                                        	TaskName = entity.TaskName,
-                                        	TaskDescript = entity.TaskDescript,
-                                        	NpcName = entity.NpcName,
-                                        	IsBattleTask = entity.IsBattleTask,
-                                        	IsOptionTask = entity.IsOptionTask,
-                                        	NextTaskID = entity.NextTaskID,
-                                        	PreviousTaskID = entity.PreviousTaskID,
-                                    };
+                    TaskID = entity.TaskID,
+                    AddrID = entity.AddrID,
+                    AddrName = entity.AddrName,
+                    AddrX = entity.AddrX,
+                    AddrY = entity.AddrY,
+                    chapterID = entity.chapterID,
+                    chapterName = entity.chapterName,
+                    TaskName = entity.TaskName,
+                    TaskDescript = entity.TaskDescript,
+                    NpcName = entity.NpcName,
+                    IsBattleTask = entity.IsBattleTask,
+                    IsOptionTask = entity.IsOptionTask,
+                    NextTaskID = entity.NextTaskID,
+                    PreviousTaskID = entity.PreviousTaskID,
+
+                };
 
                 return model;
             }

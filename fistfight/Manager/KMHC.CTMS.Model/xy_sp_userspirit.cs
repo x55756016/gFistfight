@@ -96,7 +96,12 @@ namespace Project.Model
          		         	/// <summary>
 		        /// CurrentTaskID
 		        /// </summary>
-		     		        		public string CurrentTaskID  { get; set; }
+		     		        		public string CurrentTaskID  { get; set; } 
+        
+        /// <summary>
+                                    /// Maxpackage
+		        /// </summary>
+                                    public Nullable<decimal> Maxpackage { get; set; }
 	        		        	
          	    	    }
 }

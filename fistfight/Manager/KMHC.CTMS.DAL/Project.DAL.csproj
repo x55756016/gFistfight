@@ -150,10 +150,7 @@
     <Compile Include="Database\xy_sp_userspirit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\XY_SP_UserSpiritEquipment.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Database\XY_SP_UserSpiritSkill.cs">
+    <Compile Include="Database\xy_sp_userspiritpackage.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,6 +168,7 @@
     <Compile Include="xy_sp_taskoption.cs" />
     <Compile Include="xy_sp_taskspirit.cs" />
     <Compile Include="xy_sp_userspirit.cs" />
+    <Compile Include="xy_sp_userspiritpackage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

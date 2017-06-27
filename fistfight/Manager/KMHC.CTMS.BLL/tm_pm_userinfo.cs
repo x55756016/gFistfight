@@ -107,7 +107,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private tm_pm_userinfo ModelToEntity(V_tm_pm_userinfo model)
+        public tm_pm_userinfo ModelToEntity(V_tm_pm_userinfo model)
         {
             if (model != null)
             {
@@ -140,7 +140,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        private V_tm_pm_userinfo EntityToModel(tm_pm_userinfo entity)
+        public V_tm_pm_userinfo EntityToModel(tm_pm_userinfo entity)
         {
             if (entity != null)
             {

@@ -108,13 +108,50 @@ namespace Project.BLL
            		return dal.Delete(id);
             }
         }
+
+        public V_xy_sp_spirit getSpiritContextByID(string SpiritID)
+        {
+            xy_sp_equipmentBLL eqBll = new xy_sp_equipmentBLL();
+            xy_sp_skillBLL skBll = new xy_sp_skillBLL();
+            using (xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL())
+            {
+                
+                var q = from ent in dal._context.xy_sp_spirit
+                        where ent.SpiritID == SpiritID
+                        select ent;
+                V_xy_sp_spirit spiritV = EntityToModel(q.FirstOrDefault());
+
+                //查询装备
+                var sps = from spEq in dal._context.xy_sp_spiritequipment
+                          join eq in dal._context.xy_sp_equipment on spEq.EquipmentID equals eq.EquipmentID
+                          where spEq.SpiritID == SpiritID
+                          select eq;
+
+                foreach (var spItem in sps)
+                {
+                    spiritV.spiritEquipmentList.Add(eqBll.EntityToModel(spItem));
+                }
+
+                //查询技能
+                var sks = from SpiritSkill in dal._context.xy_sp_spiritskill
+                          join Skill in dal._context.xy_sp_skill on SpiritSkill.SkillID equals Skill.SkillID
+                          where SpiritSkill.SpiritID == SpiritID
+                          select Skill;
+
+                foreach (var skItem in sks)
+                {
+                    spiritV.spiritSkillList.Add(skBll.EntityToModel(skItem));
+                }
+                return spiritV;
+            }
+        }
       
         /// <summary>
         /// Model转Entity
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private xy_sp_spirit ModelToEntity(V_xy_sp_spirit model)
+        public xy_sp_spirit ModelToEntity(V_xy_sp_spirit model)
         {
             if (model != null)
             {
@@ -144,7 +181,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        private V_xy_sp_spirit  EntityToModel(xy_sp_spirit  entity)
+        public V_xy_sp_spirit EntityToModel(xy_sp_spirit entity)
         {
             if (entity != null)
             {

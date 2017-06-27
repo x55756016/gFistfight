@@ -3,7 +3,7 @@
  *  
  * 修订历史: 
  * 日期                    修改人              Email                   内容
- * 2017-06-15                                         创建 
+ * 2017-06-27                                         创建 
  *  
  */
  
@@ -11,30 +11,27 @@ using System;
 
 namespace Project.Model
 {
-    public class V_xy_sp_taskspirit
+    public class V_xy_sp_userspiritpackage
     {      
     	    			         	/// <summary>
+		        /// SpiritPackageID
+		        /// </summary>
+		     		        		public string SpiritPackageID  { get; set; }
+	        		        	
+         		         	/// <summary>
 		        /// UserSpiritID
 		        /// </summary>
 		     		        		public string UserSpiritID  { get; set; }
 	        		        	
          		         	/// <summary>
-		        /// UserId
+		        /// EquipmentID
 		        /// </summary>
-                                    public string TaskID { get; set; }
+		     		        		public string EquipmentID  { get; set; }
 	        		        	
          		         	/// <summary>
-		        /// SpiritID
+		        /// LostRate
 		        /// </summary>
-		     		        		public string SpiritID  { get; set; }
-	        		        	
-         		         	/// <summary>
-		        /// isBoos
-		        /// </summary>
-		     		        		public Nullable<decimal> isBoos  { get; set; }
-
-
-                                    public V_xy_sp_spirit spirit { get; set; }
+		     		        		public Nullable<decimal> LostRate  { get; set; }
 	        		        	
          	    	    }
 }

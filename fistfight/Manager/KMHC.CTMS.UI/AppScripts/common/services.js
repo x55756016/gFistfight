@@ -19,6 +19,7 @@
  		        	, 'xy_sp_taskspirit'
  		        	, 'xy_sp_userinfo'
  		        	, 'xy_sp_userspirit'
+ 		        	, 'xy_sp_userspiritpackage'
     ];// the services without customized actions
     function addService(name, actions) {
         app.factory(name + 'Services', ['$resource', function ($resource) {

@@ -20,6 +20,7 @@ angular.module('userApp', [
                 	, 'xy_sp_taskspirit'
                 	, 'xy_sp_userinfo'
                 	, 'xy_sp_userspirit'
+                	, 'xy_sp_userspiritpackage'
 ]).
     config([
         '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -69,6 +70,9 @@ angular.module('userApp', [
             $routeProvider.when('/xy_sp_userspirit', { templateUrl: '/Views/List/xy_sp_userspirit.html', controller: 'xy_sp_userspiritCtrl' });
             $routeProvider.when('/Addxy_sp_userspirit', { templateUrl: '/Views/Info/xy_sp_userspirit.html', controller: 'Addxy_sp_userspiritCtrl' });
             $routeProvider.when('/Editxy_sp_userspirit', { templateUrl: '/Views/Info/xy_sp_userspirit.html', controller: 'Addxy_sp_userspiritCtrl' });
+            $routeProvider.when('/xy_sp_userspiritpackage', { templateUrl: '/Views/List/xy_sp_userspiritpackage.html', controller: 'xy_sp_userspiritpackageCtrl' });
+            $routeProvider.when('/Addxy_sp_userspiritpackage', { templateUrl: '/Views/Info/xy_sp_userspiritpackage.html', controller: 'Addxy_sp_userspiritpackageCtrl' });
+            $routeProvider.when('/Editxy_sp_userspiritpackage', { templateUrl: '/Views/Info/xy_sp_userspiritpackage.html', controller: 'Addxy_sp_userspiritpackageCtrl' });
 
             $routeProvider.otherwise({ redirectTo: '/' });
         }

@@ -30,8 +30,8 @@ namespace Project.BLL
              if (model == null)
                 return string.Empty;
                 
-  			using(xy_sp_spiritskillDAL dal = new xy_sp_spiritskillDAL()){              
-            xy_sp_spiritskill entity = ModelToEntity(model);
+  			using(xy_sp_spiritskillDAL dal = new xy_sp_spiritskillDAL()){
+                xy_sp_spiritskill entity = ModelToEntity(model);
             entity.SpiritSkillID = string.IsNullOrEmpty(model.SpiritSkillID) ? Guid.NewGuid().ToString("N") : model.SpiritSkillID;
 
             return dal.Add(entity);

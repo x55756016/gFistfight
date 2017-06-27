@@ -69,6 +69,7 @@ namespace Project.UI
                         , "~/AppScripts/ModuleJS/xy_sp_taskspirit.js"
                         , "~/AppScripts/ModuleJS/xy_sp_userinfo.js"
                         , "~/AppScripts/ModuleJS/xy_sp_userspirit.js"
+                        , "~/AppScripts/ModuleJS/xy_sp_userspiritpackage.js"
                         ));
         }
     }

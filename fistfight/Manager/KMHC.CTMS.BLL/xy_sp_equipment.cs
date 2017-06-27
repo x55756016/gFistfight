@@ -114,7 +114,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private xy_sp_equipment ModelToEntity(V_xy_sp_equipment model)
+        public xy_sp_equipment ModelToEntity(V_xy_sp_equipment model)
         {
             if (model != null)
             {
@@ -139,7 +139,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        private V_xy_sp_equipment  EntityToModel(xy_sp_equipment  entity)
+        public V_xy_sp_equipment EntityToModel(xy_sp_equipment entity)
         {
             if (entity != null)
             {

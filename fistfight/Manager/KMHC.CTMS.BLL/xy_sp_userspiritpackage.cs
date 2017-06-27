@@ -3,7 +3,7 @@
  *  
  * 修订历史: 
  * 日期                    修改人              Email                   内容
- * 2017-06-15                                         创建 
+ * 2017-06-27                                         创建 
  *  
  */
  
@@ -18,21 +18,21 @@ using System.Linq.Expressions;
 
 namespace Project.BLL
 {
-    public class xy_sp_taskspiritBLL
+    public class xy_sp_userspiritpackageBLL
     {
         /// <summary>
         /// 新增
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public string Add(V_xy_sp_taskspirit model)
+        public string Add(V_xy_sp_userspiritpackage model)
         {
              if (model == null)
                 return string.Empty;
                 
-  			using(xy_sp_taskspiritDAL dal = new xy_sp_taskspiritDAL()){              
-            xy_sp_taskspirit entity = ModelToEntity(model);
-            entity.UserSpiritID = string.IsNullOrEmpty(model.UserSpiritID) ? Guid.NewGuid().ToString("N") : model.UserSpiritID;
+  			using(xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL()){              
+            xy_sp_userspiritpackage entity = ModelToEntity(model);
+            entity.SpiritPackageID = string.IsNullOrEmpty(model.SpiritPackageID) ? Guid.NewGuid().ToString("N") : model.SpiritPackageID;
 
             return dal.Add(entity);
             }
@@ -42,10 +42,10 @@ namespace Project.BLL
         /// 获取单条数据
         /// </summary>
         /// <returns></returns>
-        public V_xy_sp_taskspirit Get(Expression<Func<xy_sp_taskspirit, bool>> predicate = null)
+        public V_xy_sp_userspiritpackage Get(Expression<Func<xy_sp_userspiritpackage, bool>> predicate = null)
         {
-        	using(xy_sp_taskspiritDAL dal = new xy_sp_taskspiritDAL()){        
-	            xy_sp_taskspirit entity= dal.Get(predicate);
+        	using(xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL()){        
+	            xy_sp_userspiritpackage entity= dal.Get(predicate);
 	            return EntityToModel(entity); 
             }
         }
@@ -54,12 +54,12 @@ namespace Project.BLL
         /// 获取列表
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<V_xy_sp_taskspirit> Get()
+        public IEnumerable<V_xy_sp_userspiritpackage> Get()
         {
-        	using(xy_sp_taskspiritDAL dal = new xy_sp_taskspiritDAL()){        
-	            List<xy_sp_taskspirit> entitys = dal.Get().ToList();
-	            List<V_xy_sp_taskspirit> list = new List<V_xy_sp_taskspirit>();
-	            foreach (xy_sp_taskspirit item in entitys)
+        	using(xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL()){        
+	            List<xy_sp_userspiritpackage> entitys = dal.Get().ToList();
+	            List<V_xy_sp_userspiritpackage> list = new List<V_xy_sp_userspiritpackage>();
+	            foreach (xy_sp_userspiritpackage item in entitys)
 	            {
 	                list.Add(EntityToModel(item));
 	            }
@@ -72,9 +72,9 @@ namespace Project.BLL
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>
-        public IEnumerable<V_xy_sp_taskspirit> GetList(PageInfo page)
+        public IEnumerable<V_xy_sp_userspiritpackage> GetList(PageInfo page)
         {
-        	using(xy_sp_taskspiritDAL dal = new xy_sp_taskspiritDAL()){        
+        	using(xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL()){        
 	            var list = dal.Get();
 	
 	            return list.Paging(ref page).Select(EntityToModel).ToList();
@@ -86,11 +86,11 @@ namespace Project.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool Edit(V_xy_sp_taskspirit model)
+        public bool Edit(V_xy_sp_userspiritpackage model)
         {
             if (model == null) return false;
-            using(xy_sp_taskspiritDAL dal = new xy_sp_taskspiritDAL()){        
-	            xy_sp_taskspirit entitys = ModelToEntity(model);
+            using(xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL()){        
+	            xy_sp_userspiritpackage entitys = ModelToEntity(model);
 	            
 	            return dal.Edit(entitys);
             }
@@ -104,7 +104,7 @@ namespace Project.BLL
         public bool Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) return false;
-			using(xy_sp_taskspiritDAL dal = new xy_sp_taskspiritDAL()){        
+			using(xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL()){        
            		return dal.Delete(id);
             }
         }
@@ -114,16 +114,16 @@ namespace Project.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private xy_sp_taskspirit ModelToEntity(V_xy_sp_taskspirit model)
+        private xy_sp_userspiritpackage ModelToEntity(V_xy_sp_userspiritpackage model)
         {
             if (model != null)
             {
-                xy_sp_taskspirit entity = new xy_sp_taskspirit()
+                xy_sp_userspiritpackage entity = new xy_sp_userspiritpackage()
                 {
-                	                    	UserSpiritID = model.UserSpiritID,
-                                            TaskID = model.TaskID,
-                                        	SpiritID = model.SpiritID,
-                                        	isBoos = model.isBoos,
+                	                    	SpiritPackageID = model.SpiritPackageID,
+                                        	UserSpiritID = model.UserSpiritID,
+                                        	EquipmentID = model.EquipmentID,
+                                        	LostRate = model.LostRate,
                                     };
 
                 return entity;
@@ -136,16 +136,16 @@ namespace Project.BLL
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        private V_xy_sp_taskspirit  EntityToModel(xy_sp_taskspirit  entity)
+        private V_xy_sp_userspiritpackage  EntityToModel(xy_sp_userspiritpackage  entity)
         {
             if (entity != null)
             {
-                V_xy_sp_taskspirit  model = new V_xy_sp_taskspirit ()
+                V_xy_sp_userspiritpackage  model = new V_xy_sp_userspiritpackage ()
                 {
-                                       	UserSpiritID = entity.UserSpiritID,
-                                        	TaskID = entity.TaskID,
-                                        	SpiritID = entity.SpiritID,
-                                        	isBoos = entity.isBoos,
+                                       	SpiritPackageID = entity.SpiritPackageID,
+                                        	UserSpiritID = entity.UserSpiritID,
+                                        	EquipmentID = entity.EquipmentID,
+                                        	LostRate = entity.LostRate,
                                     };
 
                 return model;

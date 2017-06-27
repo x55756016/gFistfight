@@ -123,6 +123,7 @@ namespace Project.BLL
                 	                    	SpiritEquipment = model.SpiritEquipment,
                                         	SpiritID = model.SpiritID,
                                         	EquipmentID = model.EquipmentID,
+                                            LostRate=model.LostRate
                                     };
 
                 return entity;
@@ -144,6 +145,8 @@ namespace Project.BLL
                                        	SpiritEquipment = entity.SpiritEquipment,
                                         	SpiritID = entity.SpiritID,
                                         	EquipmentID = entity.EquipmentID,
+                                            LostRate=entity.LostRate
+                                       
                                     };
 
                 return model;

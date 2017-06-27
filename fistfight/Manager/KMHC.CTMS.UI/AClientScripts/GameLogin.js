@@ -11,6 +11,7 @@ $(document).ready(function () {
             url: '/User/UserLogin',
             data: V_tm_pm_userinfo,
             success: function (data) {
+                debugger;
                 if (data != "") {
                     location.href = "/Personal";
                 }

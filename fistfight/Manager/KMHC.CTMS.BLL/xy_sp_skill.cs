@@ -114,7 +114,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        private xy_sp_skill ModelToEntity(V_xy_sp_skill model)
+        public xy_sp_skill ModelToEntity(V_xy_sp_skill model)
         {
             if (model != null)
             {
@@ -143,7 +143,7 @@ namespace Project.BLL
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        private V_xy_sp_skill  EntityToModel(xy_sp_skill  entity)
+        public V_xy_sp_skill EntityToModel(xy_sp_skill entity)
         {
             if (entity != null)
             {

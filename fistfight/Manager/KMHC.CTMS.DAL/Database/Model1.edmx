@@ -117,6 +117,7 @@
           <Property Name="SpiritEquipment" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SpiritID" Type="varchar" MaxLength="50" />
           <Property Name="EquipmentID" Type="varchar" MaxLength="50" />
+          <Property Name="LostRate" Type="decimal" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="xy_sp_spiritskill">
           <Key>
@@ -124,6 +125,8 @@
           </Key>
           <Property Name="SpiritSkillID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SpiritID" Type="varchar" MaxLength="50" />
+          <Property Name="SkillLevel" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="HarmAdd" Type="decimal" Precision="10" Scale="0" />
           <Property Name="SkillID" Type="varchar" MaxLength="50" />
           <Property Name="IsReady" Type="decimal" Precision="1" Scale="0" />
         </EntityType>
@@ -213,26 +216,16 @@
           <Property Name="MagicHarm" Type="decimal" Precision="10" Scale="0" />
           <Property Name="Spiritspeed" Type="decimal" Precision="10" Scale="0" />
           <Property Name="CurrentTaskID" Type="varchar" MaxLength="50" />
+          <Property Name="Maxpackage" Type="decimal" Precision="10" Scale="0" />
         </EntityType>
-        <EntityType Name="XY_SP_UserSpiritEquipment">
+        <EntityType Name="xy_sp_userspiritpackage">
           <Key>
-            <PropertyRef Name="SpiritEquipment" />
+            <PropertyRef Name="SpiritPackageID" />
           </Key>
-          <Property Name="SpiritEquipment" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserSpiritID" Type="varchar" MaxLength="50" />
+          <Property Name="SpiritPackageID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserSpiritID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="EquipmentID" Type="varchar" MaxLength="50" />
           <Property Name="LostRate" Type="decimal" Precision="10" Scale="0" />
-        </EntityType>
-        <EntityType Name="XY_SP_UserSpiritSkill">
-          <Key>
-            <PropertyRef Name="SpiritSkillID" />
-          </Key>
-          <Property Name="SpiritSkillID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserSpiritID" Type="varchar" MaxLength="50" />
-          <Property Name="SkillID" Type="varchar" MaxLength="50" />
-          <Property Name="SkillLevel" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="HarmAdd" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="IsReady" Type="decimal" Precision="1" Scale="0" />
         </EntityType>
         <EntityContainer Name="tmpmModelStoreContainer">
           <EntitySet Name="tm_pm_userinfo" EntityType="Self.tm_pm_userinfo" Schema="xiyou" store:Type="Tables" />
@@ -250,8 +243,7 @@
           <EntitySet Name="xy_sp_taskspirit" EntityType="Self.xy_sp_taskspirit" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_userinfo" EntityType="Self.xy_sp_userinfo" Schema="xiyou" store:Type="Tables" />
           <EntitySet Name="xy_sp_userspirit" EntityType="Self.xy_sp_userspirit" Schema="xiyou" store:Type="Tables" />
-          <EntitySet Name="XY_SP_UserSpiritEquipment" EntityType="Self.XY_SP_UserSpiritEquipment" Schema="xiyou" store:Type="Tables" />
-          <EntitySet Name="XY_SP_UserSpiritSkill" EntityType="Self.XY_SP_UserSpiritSkill" Schema="xiyou" store:Type="Tables" />
+          <EntitySet Name="xy_sp_userspiritpackage" EntityType="Self.xy_sp_userspiritpackage" Schema="xiyou" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -273,8 +265,7 @@
           <EntitySet Name="xy_sp_taskspirit" EntityType="tmpmModel.xy_sp_taskspirit" />
           <EntitySet Name="xy_sp_userinfo" EntityType="tmpmModel.xy_sp_userinfo" />
           <EntitySet Name="xy_sp_userspirit" EntityType="tmpmModel.xy_sp_userspirit" />
-          <EntitySet Name="XY_SP_UserSpiritEquipment" EntityType="tmpmModel.XY_SP_UserSpiritEquipment" />
-          <EntitySet Name="XY_SP_UserSpiritSkill" EntityType="tmpmModel.XY_SP_UserSpiritSkill" />
+          <EntitySet Name="xy_sp_userspiritpackage" EntityType="tmpmModel.xy_sp_userspiritpackage" />
         </EntityContainer>
         <EntityType Name="tm_pm_userinfo">
           <Key>
@@ -388,6 +379,7 @@
           <Property Name="SpiritEquipment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EquipmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LostRate" Type="Decimal" />
         </EntityType>
         <EntityType Name="xy_sp_spiritskill">
           <Key>
@@ -395,6 +387,8 @@
           </Key>
           <Property Name="SpiritSkillID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SkillLevel" Type="Decimal" />
+          <Property Name="HarmAdd" Type="Decimal" />
           <Property Name="SkillID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IsReady" Type="Decimal" />
         </EntityType>
@@ -484,26 +478,16 @@
           <Property Name="MagicHarm" Type="Decimal" />
           <Property Name="Spiritspeed" Type="Decimal" />
           <Property Name="CurrentTaskID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Maxpackage" Type="Decimal" />
         </EntityType>
-        <EntityType Name="XY_SP_UserSpiritEquipment">
+        <EntityType Name="xy_sp_userspiritpackage">
           <Key>
-            <PropertyRef Name="SpiritEquipment" />
+            <PropertyRef Name="SpiritPackageID" />
           </Key>
-          <Property Name="SpiritEquipment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserSpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpiritPackageID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserSpiritID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EquipmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LostRate" Type="Decimal" />
-        </EntityType>
-        <EntityType Name="XY_SP_UserSpiritSkill">
-          <Key>
-            <PropertyRef Name="SpiritSkillID" />
-          </Key>
-          <Property Name="SpiritSkillID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserSpiritID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SkillID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SkillLevel" Type="Decimal" />
-          <Property Name="HarmAdd" Type="Decimal" />
-          <Property Name="IsReady" Type="Decimal" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -627,6 +611,7 @@
           <EntitySetMapping Name="xy_sp_spiritequipment">
             <EntityTypeMapping TypeName="tmpmModel.xy_sp_spiritequipment">
               <MappingFragment StoreEntitySet="xy_sp_spiritequipment">
+                <ScalarProperty Name="LostRate" ColumnName="LostRate" />
                 <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
                 <ScalarProperty Name="SpiritID" ColumnName="SpiritID" />
                 <ScalarProperty Name="SpiritEquipment" ColumnName="SpiritEquipment" />
@@ -638,6 +623,8 @@
               <MappingFragment StoreEntitySet="xy_sp_spiritskill">
                 <ScalarProperty Name="IsReady" ColumnName="IsReady" />
                 <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="HarmAdd" ColumnName="HarmAdd" />
+                <ScalarProperty Name="SkillLevel" ColumnName="SkillLevel" />
                 <ScalarProperty Name="SpiritID" ColumnName="SpiritID" />
                 <ScalarProperty Name="SpiritSkillID" ColumnName="SpiritSkillID" />
               </MappingFragment>
@@ -715,6 +702,7 @@
           <EntitySetMapping Name="xy_sp_userspirit">
             <EntityTypeMapping TypeName="tmpmModel.xy_sp_userspirit">
               <MappingFragment StoreEntitySet="xy_sp_userspirit">
+                <ScalarProperty Name="Maxpackage" ColumnName="Maxpackage" />
                 <ScalarProperty Name="CurrentTaskID" ColumnName="CurrentTaskID" />
                 <ScalarProperty Name="Spiritspeed" ColumnName="Spiritspeed" />
                 <ScalarProperty Name="MagicHarm" ColumnName="MagicHarm" />
@@ -735,25 +723,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="XY_SP_UserSpiritEquipment">
-            <EntityTypeMapping TypeName="tmpmModel.XY_SP_UserSpiritEquipment">
-              <MappingFragment StoreEntitySet="XY_SP_UserSpiritEquipment">
+          <EntitySetMapping Name="xy_sp_userspiritpackage">
+            <EntityTypeMapping TypeName="tmpmModel.xy_sp_userspiritpackage">
+              <MappingFragment StoreEntitySet="xy_sp_userspiritpackage">
                 <ScalarProperty Name="LostRate" ColumnName="LostRate" />
                 <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
                 <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
-                <ScalarProperty Name="SpiritEquipment" ColumnName="SpiritEquipment" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="XY_SP_UserSpiritSkill">
-            <EntityTypeMapping TypeName="tmpmModel.XY_SP_UserSpiritSkill">
-              <MappingFragment StoreEntitySet="XY_SP_UserSpiritSkill">
-                <ScalarProperty Name="IsReady" ColumnName="IsReady" />
-                <ScalarProperty Name="HarmAdd" ColumnName="HarmAdd" />
-                <ScalarProperty Name="SkillLevel" ColumnName="SkillLevel" />
-                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
-                <ScalarProperty Name="UserSpiritID" ColumnName="UserSpiritID" />
-                <ScalarProperty Name="SpiritSkillID" ColumnName="SpiritSkillID" />
+                <ScalarProperty Name="SpiritPackageID" ColumnName="SpiritPackageID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
