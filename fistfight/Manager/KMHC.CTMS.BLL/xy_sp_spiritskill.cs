@@ -80,7 +80,24 @@ namespace Project.BLL
 	            return list.Paging(ref page).Select(EntityToModel).ToList();
             }
         }
-		
+
+        /// <summary>
+        /// 获取分页数据
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public List<V_xy_sp_spiritskill> GetListBySpID(string SpID)
+        {
+            using (xy_sp_spiritskillDAL dal = new xy_sp_spiritskillDAL())
+            {
+                var list = from ent in dal.Get()
+                           where ent.SpiritID == SpID
+                           select ent;
+
+                return list.Select(EntityToModel).ToList();
+            }
+        }
+
 		/// <summary>
         /// 更新
         /// </summary>
@@ -140,12 +157,14 @@ namespace Project.BLL
         {
             if (entity != null)
             {
+                xy_sp_skillBLL bll=new xy_sp_skillBLL();
                 V_xy_sp_spiritskill  model = new V_xy_sp_spiritskill ()
                 {
                                        	SpiritSkillID = entity.SpiritSkillID,
                                         	SpiritID = entity.SpiritID,
                                         	SkillID = entity.SkillID,
                                         	IsReady = entity.IsReady,
+                                            skill = bll.Get(c=>c.SkillID==entity.SkillID)
                                     };
 
                 return model;

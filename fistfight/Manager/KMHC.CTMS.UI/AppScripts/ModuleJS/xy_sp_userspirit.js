@@ -46,7 +46,6 @@ app.controller('xy_sp_userspiritCtrl', ['$scope', '$http', '$filter','$location'
             }
 
             $scope.Search();
-
         }
 ]);
 

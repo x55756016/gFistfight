@@ -8,11 +8,18 @@
  */
  
 using System;
+using System.Collections.Generic;
 
 namespace Project.Model
 {
     public class V_xy_sp_userspirit
-    {      
+    {     
+ 
+        public V_xy_sp_userspirit()
+        {
+            spEquipmentList = new List<V_xy_sp_spiritequipment>();
+            spSkillList = new List<V_xy_sp_spiritskill>();
+        }
     	    			         	/// <summary>
 		        /// UserSpiritID
 		        /// </summary>
@@ -102,6 +109,10 @@ namespace Project.Model
                                     /// Maxpackage
 		        /// </summary>
                                     public Nullable<decimal> Maxpackage { get; set; }
+
+                                    public List<V_xy_sp_spiritequipment> spEquipmentList { get; set; }
+
+                                    public List<V_xy_sp_spiritskill> spSkillList { get; set; }
 	        		        	
          	    	    }
 }

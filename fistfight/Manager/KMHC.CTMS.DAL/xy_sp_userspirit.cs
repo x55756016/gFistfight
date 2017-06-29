@@ -71,7 +71,7 @@ namespace Project.DAL
         /// 单条数据
         /// </summary>
         /// <returns></returns>
-        public xy_sp_userspirit GetbyUserID(string UserID)
+        public xy_sp_userspirit GetSpiritbyUserID(string UserID)
         {
             return base.FindOne(c => c.UserId == UserID);
         }

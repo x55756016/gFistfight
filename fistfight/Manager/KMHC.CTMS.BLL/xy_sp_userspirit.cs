@@ -59,14 +59,19 @@ namespace Project.BLL
             V_xy_sp_userView userV = new V_xy_sp_userView();
             tm_pm_userinfoBLL ubll=new tm_pm_userinfoBLL();
             xy_sp_userspiritBLL upbll=new xy_sp_userspiritBLL();
-            xy_sp_taskBLL tBll = new xy_sp_taskBLL();
+            xy_sp_spiritequipmentBLL sqBll = new xy_sp_spiritequipmentBLL();
+            xy_sp_spiritskillBLL skBll = new xy_sp_spiritskillBLL();
+            
+            xy_sp_taskBLL tkBll = new xy_sp_taskBLL();
 
             using (xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL())
             {
                 userV.User = ubll.GetUserInfoByID(UserID); 
-                xy_sp_userspirit entity = dal.GetbyUserID(UserID);
+                xy_sp_userspirit entity = dal.GetSpiritbyUserID(UserID);
                 userV.Spirit = EntityToModel(entity);
-                userV.Task = tBll.getTaskContext(entity.CurrentTaskID);
+                userV.Spirit.spEquipmentList = sqBll.GetSpEqListBySpID(userV.Spirit.SpiritID);
+                userV.Spirit.spSkillList = skBll.GetListBySpID(userV.Spirit.SpiritID);
+                userV.Task = tkBll.getTaskContext(entity.CurrentTaskID);
                 return userV;
             }
         }
