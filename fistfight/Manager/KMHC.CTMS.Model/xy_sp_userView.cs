@@ -11,8 +11,10 @@ using System;
 
 namespace Project.Model
 {
+
     public class V_xy_sp_userView
     {
+        public string CurrentToken { get; set; }
         public V_xy_sp_userView()
         {
             Spirit = new V_xy_sp_userspirit();

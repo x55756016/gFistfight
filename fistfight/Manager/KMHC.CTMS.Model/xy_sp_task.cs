@@ -17,7 +17,7 @@ namespace Project.Model
 
         public V_xy_sp_task()
         {
-            Spirits = new List<V_xy_sp_spirit>();
+            SpiritsList = new List<V_xy_sp_spirit>();
         }
         /// <summary>
         /// TaskID
@@ -91,7 +91,7 @@ namespace Project.Model
 
 
 
-        public List<V_xy_sp_spirit> Spirits { get; set; }
+        public List<V_xy_sp_spirit> SpiritsList { get; set; }
 
     }
 }

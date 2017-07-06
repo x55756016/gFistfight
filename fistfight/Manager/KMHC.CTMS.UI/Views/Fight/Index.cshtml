@@ -1,37 +1,51 @@
 ﻿<!DOCTYPE html>
+@{
+    Project.Model.V_xy_sp_userView o = Model as Project.Model.V_xy_sp_userView;
+    var lifeStr = o.Spirit.SpiritLife + "/" + @o.Spirit.SpiritLifeMax;
+}
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <script src="../AClientScripts/jquery-1.10.2.min.js"></script>
-    <script src="../AClientScripts/ChatRoom.js"></script>
+    @*<script src="../AClientScripts/ChatRoom.js"></script>*@
+    <script src="../AClientScripts/FightTimer.js"></script>
 </head>
 <body>
     <div class="row">
         <div class="col-md-2">
             我方信息
             <table class="table table-bordered">
-                <tr><td>姓名：咔咔咔</td></tr>
-                <tr><td>物理攻击力：10</td></tr>
-                <tr><td>物理防御力：8</td></tr>
-                <tr><td>魔法攻击力：2</td></tr>
-                <tr><td>魔法防御力：3</td></tr>
-                <tr><td>速度：10</td></tr>
+                <tr><td>姓名：@o.Spirit.SpiritLife</td><td><p><a id="startFight" class="btn btn-primary btn-large">普通攻击</a></p></td></tr>
+                <tr><td>等级：@o.Spirit.SpiritLevel</td><td><p><a id="startFight" class="btn btn-primary btn-large">技能1</a></p></td></tr>
+                <tr><td>生命：@o.Spirit.SpiritLife</td><td><p><a id="startFight" class="btn btn-primary btn-large">技能2</a></p></td></tr>
             </table>
         </div>
         <div class="col-md-8">
             战斗及时信息
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="batinfo_output">战斗信息</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul id="batinfoBoard"></ul>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-2">
             敌方信息
-            <table class="table table-bordered">
-                <tr><td>怪物名称：羊头怪</td></tr>
-                <tr><td>物理攻击力：10</td></tr>
-                <tr><td>物理防御力：8</td></tr>
-                <tr><td>魔法攻击力：2</td></tr>
-                <tr><td>魔法防御力：3</td></tr>
-                <tr><td>速度：10</td></tr>
-            </table>
+                <h5><span class="label label-danger">当前怪物列表</span></h5>
+                <table class="table table-bordered">
+                    @foreach (var item in @o.Task.SpiritsList)
+                    {
+                     <tr>
+                    <td>怪物：@item.SpiritName</td>
+                    <td id="@item.SpiritID">生命：@item.SpiritLife</td>
+                    <td><p><a href="~/Fight" class="btn btn-primary btn-large">查看详情</a></p></td></tr>
+                    }
+                </table>
         </div>
     </div>
     <div class="row">
@@ -47,8 +61,8 @@
     <div class="row">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">聊天信息</h3>
-                <input type="hidden" id="displayname" />
+                <h3 class="panel-title" id="message_output">聊天信息</h3>
+                <input type="hidden" id="currentToken" value="@o.User.USERID" />@*@o.CurrentToken*@
             </div>
             <div class="panel-body">
                 <ul id="discussionBoard"></ul>

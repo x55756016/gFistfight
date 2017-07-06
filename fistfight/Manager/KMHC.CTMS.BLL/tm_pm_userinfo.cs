@@ -302,6 +302,10 @@ namespace Project.BLL
             if (string.IsNullOrEmpty(tokenValue))
                 return null;
             V_tm_pm_userinfo userInfo = _cached.Get(tokenValue) as V_tm_pm_userinfo;
+            if(userInfo==null)
+            {
+              userInfo=  GetUserInfoByID(tokenValue);
+            }
             return userInfo;
         }
 

@@ -23,7 +23,10 @@ namespace fistfight.Controllers
                     V_tm_pm_userinfo user = new tm_pm_userinfoBLL().GetLoginInfo(tokenValue);
                     V_xy_sp_userView up = new xy_sp_userspiritBLL().GetCurrentUserStatebyUserID(user.USERID);
                     if (up != null)
+                    {
+                        up.CurrentToken = tokenValue;
                         return View(up);
+                    }
                 }
             }
             return Redirect("/GameLogin");

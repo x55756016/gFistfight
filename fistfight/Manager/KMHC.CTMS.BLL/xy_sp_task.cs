@@ -127,7 +127,7 @@ namespace Project.BLL
                 {
                     V_xy_sp_spirit spirit = spBll.getSpiritContextByID(item.SpiritID);                 
 
-                    task.Spirits.Add(spirit);
+                    task.SpiritsList.Add(spirit);
                 }
                 return task;
             }

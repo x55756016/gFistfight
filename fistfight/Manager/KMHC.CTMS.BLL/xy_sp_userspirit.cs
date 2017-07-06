@@ -61,7 +61,7 @@ namespace Project.BLL
             xy_sp_userspiritBLL upbll=new xy_sp_userspiritBLL();
             xy_sp_spiritequipmentBLL sqBll = new xy_sp_spiritequipmentBLL();
             xy_sp_spiritskillBLL skBll = new xy_sp_spiritskillBLL();
-            
+            xy_sp_userspiritpackageBLL spBll = new xy_sp_userspiritpackageBLL();
             xy_sp_taskBLL tkBll = new xy_sp_taskBLL();
 
             using (xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL())
@@ -69,8 +69,14 @@ namespace Project.BLL
                 userV.User = ubll.GetUserInfoByID(UserID); 
                 xy_sp_userspirit entity = dal.GetSpiritbyUserID(UserID);
                 userV.Spirit = EntityToModel(entity);
+                //用户背包
+                userV.Spirit.packageList = spBll.GetSpPackageListBySpID(userV.Spirit.SpiritID);
+                //用户装备
                 userV.Spirit.spEquipmentList = sqBll.GetSpEqListBySpID(userV.Spirit.SpiritID);
+                //用户技能
                 userV.Spirit.spSkillList = skBll.GetListBySpID(userV.Spirit.SpiritID);
+
+
                 userV.Task = tkBll.getTaskContext(entity.CurrentTaskID);
                 return userV;
             }

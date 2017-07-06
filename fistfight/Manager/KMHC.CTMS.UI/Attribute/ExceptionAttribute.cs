@@ -26,6 +26,7 @@ namespace Project.UI.Attribute
                 filterContext.RequestContext.HttpContext.Response.StatusCode = 500;
                 filterContext.RequestContext.HttpContext.Response.TrySkipIisCustomErrors = true;
                 base.OnException(filterContext);
+                throw filterContext.Exception;
             }
         }
     }

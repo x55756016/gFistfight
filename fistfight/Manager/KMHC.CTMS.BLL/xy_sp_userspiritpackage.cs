@@ -49,7 +49,22 @@ namespace Project.BLL
 	            return EntityToModel(entity); 
             }
         }
-		
+        /// <summary>
+        /// 获取分页数据
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public List<V_xy_sp_userspiritpackage> GetSpPackageListBySpID(string SpID)
+        {
+            using (xy_sp_userspiritpackageDAL dal = new xy_sp_userspiritpackageDAL())
+            {
+                var list = from ent in dal.Get()
+                           where ent.UserSpiritID == SpID
+                           select ent;
+
+                return list.Select(EntityToModel).ToList();
+            }
+        }
         /// <summary>
         /// 获取列表
         /// </summary>

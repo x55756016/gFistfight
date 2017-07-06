@@ -80,6 +80,7 @@ namespace Project.Model
         /// </summary>
         public Nullable<decimal> Spiritspeed { get; set; }
 
+
         /// <summary>
         /// 精灵装备
         /// </summary>

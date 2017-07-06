@@ -19,6 +19,7 @@ namespace Project.Model
         {
             spEquipmentList = new List<V_xy_sp_spiritequipment>();
             spSkillList = new List<V_xy_sp_spiritskill>();
+            packageList = new List<V_xy_sp_userspiritpackage>();
         }
     	    			         	/// <summary>
 		        /// UserSpiritID
@@ -109,6 +110,8 @@ namespace Project.Model
                                     /// Maxpackage
 		        /// </summary>
                                     public Nullable<decimal> Maxpackage { get; set; }
+                                    //精灵背包
+                                    public List<V_xy_sp_userspiritpackage> packageList { get; set; }
 
                                     public List<V_xy_sp_spiritequipment> spEquipmentList { get; set; }
 
