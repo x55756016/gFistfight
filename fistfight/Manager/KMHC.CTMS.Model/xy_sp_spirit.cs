@@ -12,6 +12,7 @@ using System.Collections.Generic;
 
 namespace Project.Model
 {
+     [Serializable]
     public class V_xy_sp_spirit
     {
         public V_xy_sp_spirit()

@@ -11,6 +11,7 @@ using System;
 
 namespace Project.Model
 {
+    [Serializable]
     public class V_tm_pm_userinfo
     {
         /// <summary>

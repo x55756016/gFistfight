@@ -1,11 +1,11 @@
 ﻿namespace Project.Common.Helper
 {
     /// <summary>
-    /// <para>Copyright (C) 2015 康美健康云服务有限公司版权所有</para>
+    /// <para>Copyright (C) 2015 </para>
     /// <para>文 件 名： JsonHelper.cs</para>
     /// <para>文件功能： json与对象相互转化类</para>
     /// <para>开发部门： 平台部</para>
-    /// <para>创 建 人： lmf</para>
+    /// <para>创 建 人： ken</para>
     /// <para>创建日期： 2015.10.19</para>
     /// <para>修 改 人： </para>
     /// <para>修改日期： </para>

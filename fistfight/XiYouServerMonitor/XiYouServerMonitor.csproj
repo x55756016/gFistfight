@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheServer.cs" />
     <Compile Include="FightHelper.cs" />
     <Compile Include="ResponseObj.cs" />
     <Compile Include="Server_FightSocket.cs" />

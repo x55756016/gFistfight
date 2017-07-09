@@ -91,7 +91,7 @@ namespace Project.UI.Controllers
 
                 //产生令牌
                 string tokenValue = this.GetGuidString();
-                bll.CacheInfo(tokenValue + CacheString, tokenValue);
+                //bll.CacheInfo(tokenValue + CacheString, tokenValue);
 
                 bll.CacheInfo(tokenValue, userInfo);
 

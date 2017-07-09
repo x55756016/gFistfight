@@ -5,11 +5,11 @@ using System.Runtime.Caching;
 namespace Project.Common.Cached
 {
     /// <summary>
-    /// <para>Copyright (C) 2015 康美健康云服务有限公司版权所有</para>
+    /// <para>Copyright (C) 2015 </para>
     /// <para>文 件 名： LocalCached.cs</para>
     /// <para>文件功能： netframework System.Runtime.Caching缓存，内容保存本服务器内存里。对常用且数据量少的变量可以采用本地缓存</para>
     /// <para>开发部门： 平台部</para>
-    /// <para>创 建 人： lmf</para>
+    /// <para>创 建 人： ken</para>
     /// <para>创建日期： 2015.9.25</para>
     /// <para>修 改 人： </para>
     /// <para>修改日期： </para>

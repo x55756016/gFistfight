@@ -36,15 +36,18 @@ namespace XiYouServerMonitor
             try
             {
                 string tokenValue = session.Path.Split('=')[1];
-                V_tm_pm_userinfo user = new tm_pm_userinfoBLL().GetLoginInfo(tokenValue);
-                V_xy_sp_userView up = new xy_sp_userspiritBLL().GetCurrentUserStatebyUserID(user.USERID);
-                V_xy_sp_userspirit spirit = up.Spirit;
+                V_xy_sp_userView userView = CacheServer.GetUserViewFromCache(tokenValue);
                 switch (value)
                 {
                     case "skill1":
                         string batmsgAll = string.Empty;
-                        List<V_xy_sp_spirit> Enemys = FightHelper.FightBySkill(spirit, up.Spirit.spSkillList[0].skill, up.Task.SpiritsList, ref batmsgAll);
+                        List<V_xy_sp_spirit> Enemys = FightHelper.UserStartFight(userView, "skill1", ref batmsgAll);
                        
+                        //更新缓存的敌人信息
+                        userView.Task.SpiritsList.Clear();
+                        userView.Task.SpiritsList.AddRange(Enemys);
+                        CacheServer.UpdatetUserViewCache(tokenValue, userView);
+
                         ResponseObj<List<V_xy_sp_spirit>> resBat = new ResponseObj<List<V_xy_sp_spirit>>()
                         {
                             DataType = "batinfo",
@@ -56,6 +59,7 @@ namespace XiYouServerMonitor
                         SpiritJsonData = JsonConvert.SerializeObject(resBat);
                         break;
                     default:
+                        V_xy_sp_userspirit spirit = userView.Spirit;
                         ResponseObj<string> resMsg = new ResponseObj<string>()
                             {
                                 DataType = "msginfo",

@@ -11,7 +11,7 @@ using System;
 
 namespace Project.Model
 {
-
+     [Serializable]
     public class V_xy_sp_userView
     {
         public string CurrentToken { get; set; }

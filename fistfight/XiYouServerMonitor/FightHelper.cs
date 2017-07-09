@@ -18,15 +18,23 @@ namespace XiYouServerMonitor
       /// <param name="skill">技能</param>
       /// <param name="FighterToList"></param>
       /// <returns></returns>
-      public static List<V_xy_sp_spirit> FightBySkill(V_xy_sp_userspirit FighterFrom, V_xy_sp_skill skill, List<V_xy_sp_spirit> FighterToList,ref string batmsgAll)
+      public static List<V_xy_sp_spirit> UserStartFight(V_xy_sp_userView userView, string skillName,ref string batmsgAll)
       {
+
+          V_xy_sp_userspirit FighterFrom=userView.Spirit;
+          V_xy_sp_skill skill = userView.Spirit.spSkillList[0].skill;
+          List<V_xy_sp_spirit> FighterToList=userView.Task.SpiritsList;
+
           List<V_xy_sp_spirit> FighterToResult = new List<V_xy_sp_spirit>();
           FighterFrom.SpiritMagic = FighterFrom.SpiritMagic - skill.ExpendValue;
            
                int maxInjuryCount = 0;
                foreach (V_xy_sp_spirit spirit in FighterToList)
                {
-                   if (spirit.SpiritLife <= 0) continue;//生命值低于0跳过
+                   if (spirit.SpiritLife <= 0)
+                   {
+                       continue;//生命值低于0跳过
+                   }
                    if (skill.isGroupinjury == 1 && maxInjuryCount == FighterToList.Count)
                    {
                        //如果是群攻并且攻击次数已到最大次数，不攻击
@@ -43,6 +51,15 @@ namespace XiYouServerMonitor
                    batmsgAll = batmsgAll + System.Environment.NewLine + batmsg;
                    maxInjuryCount++;
                    FighterToResult.Add(spirit);
+
+                   //所有怪物已阵亡
+                   if(spirit==FighterToList.LastOrDefault())
+                   {
+                       if(spirit.SpiritLife<=0)
+                       { xy_sp_taskBLL spTaskBll = new xy_sp_taskBLL();
+                        FighterFrom.CurrentTaskID = spTaskBll.GetNextTaskByTaskID(FighterFrom.CurrentTaskID).TaskID;
+                       }
+                   }
                }
            
            return FighterToResult;
@@ -76,17 +93,19 @@ namespace XiYouServerMonitor
       {
           var LifeLeftValue = FighterTo.SpiritLife - skill.SkillGainValue;
 
-          batmsg ="\""+FighterFrom.SpiritName + "\"使用\"" + skill.SkillName + "\"攻击\"" + FighterTo.SpiritName + "\"造成\"" + skill.SkillGainValue + "\"点物理伤害";
           if (LifeLeftValue <= 0)//敌人已死亡
           {
+              batmsg = "\"" + FighterFrom.SpiritName + "\"使用\"" + skill.SkillName + "\"杀死了\"" + FighterTo.SpiritName;
               //更新等级和经验
               xy_sp_userspiritBLL uspBll = new xy_sp_userspiritBLL();
               decimal Experience = FighterTo.SpiritExperience.Value;
+              batmsg +=" 获得" + Experience+"点经验 ";
               FighterFrom.SpiritExperience += Experience;
               //等级
               if (FighterFrom.SpiritExperience > LevelExperience(FighterFrom.SpiritLevel.Value))
               {
                   FighterFrom.SpiritLevel = FighterFrom.SpiritLevel + 1;
+                  batmsg += " 恭喜你升到" + FighterFrom.SpiritLevel + "级";
                   FighterFrom.SpiritExperience = FighterFrom.SpiritExperience - LevelExperience(FighterFrom.SpiritLevel.Value);
               }
               uspBll.Edit(FighterFrom);
@@ -99,12 +118,14 @@ namespace XiYouServerMonitor
                   packageItem.EquipmentID = item.EquipmentID;
                   spBll.Add(packageItem);
               }
-          }
-          else
+
+          }else
           {
-              //更新怪物生命值
-              FighterTo.SpiritLife = LifeLeftValue;
+              batmsg = "\"" + FighterFrom.SpiritName + "\"使用\"" + skill.SkillName + "\"攻击\"" + FighterTo.SpiritName + "\"造成\"" + skill.SkillGainValue + "\"点物理伤害";
+          
           }
+          //更新怪物生命值
+          FighterTo.SpiritLife = LifeLeftValue;
       }
 
       private static decimal LevelExperience(decimal n)

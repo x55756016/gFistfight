@@ -170,7 +170,7 @@ namespace Project.BLL
         }
 
 
-        private ICached _cached = new LocalCached();
+        private ICached _cached = DistributedCachedProvider.Instance;
 
         /// <summary>
         /// 缓存时间
