@@ -1,7 +1,7 @@
 ﻿$(function () {
     //Set the hubs URL for the connection
     debugger;
-    var url = "ws://localhost:2017?token=";
+    var url = "ws://192.168.0.111:2017?token=";
     var ws = null;
     var fullUrl = url + $('#currentToken').val();
     if ("WebSocket" in window) {
@@ -9,7 +9,7 @@
     }
     else if ("MozWebSocket" in window) {
         ws = new MozWebSocket(fullUrl);
-    } else {
+    } else if (window.WebSocket == undefined) {
         $('#message_output').html("浏览器不支持WebSocket");
     }
 
@@ -32,15 +32,22 @@
         
         var obj = JSON.parse(message.data);
         if (obj.IsSuccess == "1") {
+            debugger;
             //如果是战斗信息
             if (obj.DataType == "batinfo") {
-                var array = obj.Data;
+                var userView = obj.Data;
+                var array = userView.Task.SpiritsList;
                 for (var k = 0, length = array.length; k < length; k++) {
                     if (array[k]["SpiritLife"] <= 0) {
                         $('#' + array[k]["SpiritID"] + '').html("已死亡");
                     } else {
                         $('#' + array[k]["SpiritID"] + '').html("生命：" + array[k]["SpiritLife"]);
                     }
+                }
+                if (userView.Task.IsClear == "1")//任务完成
+                {
+                    var array = userView.Task.SpiritsList;
+                    $('#discussionBoard').append('<li><strong>' + msginfo + '</strong></li>');
                 }
 
                 //显示战斗实时信息

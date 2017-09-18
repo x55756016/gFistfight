@@ -55,18 +55,15 @@ namespace Project.BLL
         /// 获取单条数据
         /// </summary>
         /// <returns></returns>
-        public V_xy_sp_task GetNextTaskByTaskID(string TaskID)
+        public string GetNextTaskIDByTaskID(string TaskID)
         {
+            string taskID = string.Empty;
             using (xy_sp_taskDAL dal = new xy_sp_taskDAL())
             {
-                xy_sp_task entity = (from ent in dal.Get()
+                taskID = (from ent in dal.Get()
                                        where ent.PreviousTaskID ==TaskID
-                                       select ent).FirstOrDefault();
-                if(entity==null)
-                {
-                    entity = new xy_sp_task();
-                }
-                return EntityToModel(entity);
+                                       select ent.TaskID).FirstOrDefault();
+                return taskID;
             }
         }
 		

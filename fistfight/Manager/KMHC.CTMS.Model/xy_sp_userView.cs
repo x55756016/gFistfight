@@ -25,5 +25,8 @@ namespace Project.Model
         public V_xy_sp_userspirit Spirit { get; set; }
 
         public V_xy_sp_task Task { get; set; }
+
+
+        public V_xy_sp_task NextTask { get; set; }
     }
 }

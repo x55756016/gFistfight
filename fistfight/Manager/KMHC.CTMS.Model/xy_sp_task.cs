@@ -20,6 +20,11 @@ namespace Project.Model
         {
             SpiritsList = new List<V_xy_sp_spirit>();
         }
+
+         /// <summary>
+        /// 是否任务已完成
+        /// </summary>
+        public string IsClear { get; set; }
         /// <summary>
         /// TaskID
         /// </summary>

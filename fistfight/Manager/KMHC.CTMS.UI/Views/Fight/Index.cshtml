@@ -49,16 +49,6 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">战斗结果</div>  
-        <div class="col-md-12">
-            <table class="table table-bordered">
-                <tr><td>金币：</td><td>+100</td></tr>
-                <tr><td>经验：</td><td>+100</td></tr>
-                <tr><td>装备：</td><td>木屐；桃木剑</td></tr>
-            </table>
-        </div>
-    </div>
-    <div class="row">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title" id="message_output">聊天信息</h3>
@@ -73,9 +63,15 @@
                         <input type="text" id="message"/>
                     </div>
                     <div class="col-md-1"><p><a id="sendmessage" class="btn btn-primary btn-large">发送</a></p></div>
-                    <div class="col-md-1"><p><a href="~/Personal" class="btn btn-primary btn-large">返回</a></p></div>
                 </div>
             </div>        
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">战斗结果</div>
+        <div class="col-md-12">
+            <ul id="battleRelustBoard"></ul>
+            <p><a href="~/Personal" class="btn btn-primary btn-large">下一任务</a></p>
         </div>
     </div>
 </body>

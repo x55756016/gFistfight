@@ -98,7 +98,24 @@ namespace Project.BLL
 	            return list;
             }
         }
-        
+          /// <summary>
+        /// 获取列表
+        /// </summary>
+        /// <returns></returns>
+        public List<V_xy_sp_userspirit> GetAllSpiritOfTask(string taskId)
+        {
+        	using(xy_sp_userspiritDAL dal = new xy_sp_userspiritDAL()){        
+	            List<xy_sp_userspirit> entitys =(from ent in dal.Get()
+                                                    where ent.CurrentTaskID ==taskId
+                                                   select ent).ToList();
+	            List<V_xy_sp_userspirit> list = new List<V_xy_sp_userspirit>();
+	            foreach (xy_sp_userspirit item in entitys)
+	            {
+	                list.Add(EntityToModel(item));
+	            }
+	            return list;
+            }
+        }
         /// <summary>
         /// 获取分页数据
         /// </summary>

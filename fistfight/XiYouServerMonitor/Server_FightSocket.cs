@@ -18,6 +18,7 @@ namespace XiYouServerMonitor
         private const int port = 2017;
         private WebSocketServer ws = null;//SuperWebSocket中的WebSocketServer对象
         private Timer timer = null;
+        private FightHelper_User fighter;
 
 
         public BoardcastWebSocket()
@@ -28,6 +29,12 @@ namespace XiYouServerMonitor
             ws.NewSessionConnected += ws_NewSessionConnected;//有新会话握手并连接成功
             ws.SessionClosed += ws_SessionClosed;//有会话被关闭 可能是服务端关闭 也可能是客户端关闭
             ws.NewMessageReceived += ws_NewMessageReceived;
+            fighter.FightComplete += fighter_FightComplete;
+        }
+
+        void fighter_FightComplete(object sender, V_xy_sp_userView e)
+        {
+            throw new NotImplementedException();
         }
 
         void ws_NewMessageReceived(WebSocketSession session, string value)
@@ -41,19 +48,21 @@ namespace XiYouServerMonitor
                 {
                     case "skill1":
                         string batmsgAll = string.Empty;
-                        List<V_xy_sp_spirit> Enemys = FightHelper.UserStartFight(userView, "skill1", ref batmsgAll);
+                        fighter = new FightHelper_User();
+                        //List<V_xy_sp_spirit> Enemys
+                        V_xy_sp_userView userViewResult = fighter.UserStartFight(userView, "skill1", ref batmsgAll);
                        
                         //更新缓存的敌人信息
-                        userView.Task.SpiritsList.Clear();
-                        userView.Task.SpiritsList.AddRange(Enemys);
+                        //userView.Task.SpiritsList.Clear();
+                        //userView.Task.SpiritsList.AddRange(Enemys);
                         CacheServer.UpdatetUserViewCache(tokenValue, userView);
 
-                        ResponseObj<List<V_xy_sp_spirit>> resBat = new ResponseObj<List<V_xy_sp_spirit>>()
+                        ResponseObj<V_xy_sp_userView> resBat = new ResponseObj<V_xy_sp_userView>()
                         {
                             DataType = "batinfo",
-                            ObjType = "list",
+                            ObjType = "obj",
                             IsSuccess = "1",
-                            Data = Enemys,
+                            Data = userViewResult,
                             MessageInfo = batmsgAll
                         };
                         SpiritJsonData = JsonConvert.SerializeObject(resBat);

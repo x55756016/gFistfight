@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace XiYouServerMonitor
 {
-  public static  class FightHelper
+  public class FightHelper_User
     {
 
+      public event EventHandler<V_xy_sp_userView> FightComplete;
       /// <summary>
       /// 战斗并返回所有怪物状态
       /// </summary>
@@ -18,7 +19,7 @@ namespace XiYouServerMonitor
       /// <param name="skill">技能</param>
       /// <param name="FighterToList"></param>
       /// <returns></returns>
-      public static List<V_xy_sp_spirit> UserStartFight(V_xy_sp_userView userView, string skillName,ref string batmsgAll)
+      public V_xy_sp_userView UserStartFight(V_xy_sp_userView userView, string skillName,ref string batmsgAll)
       {
 
           V_xy_sp_userspirit FighterFrom=userView.Spirit;
@@ -51,23 +52,29 @@ namespace XiYouServerMonitor
                    batmsgAll = batmsgAll + System.Environment.NewLine + batmsg;
                    maxInjuryCount++;
                    FighterToResult.Add(spirit);
-
                    //所有怪物已阵亡
                    if(spirit==FighterToList.LastOrDefault())
                    {
                        if(spirit.SpiritLife<=0)
-                       { xy_sp_taskBLL spTaskBll = new xy_sp_taskBLL();
-                        FighterFrom.CurrentTaskID = spTaskBll.GetNextTaskByTaskID(FighterFrom.CurrentTaskID).TaskID;
+                       {
+                           xy_sp_taskBLL tkBll = new xy_sp_taskBLL();
+                           string NextTaskID = tkBll.GetNextTaskIDByTaskID(FighterFrom.CurrentTaskID);
+
+                           userView.Task.IsClear = "1";
+                           userView.NextTask=tkBll.getTaskContext(NextTaskID);
                        }
                    }
                }
-           
-           return FighterToResult;
+
+
+               userView.Task.SpiritsList = FighterToResult;
+
+               return userView;
 
 
       }
 
-      private static V_xy_sp_spirit SkillInjury(V_xy_sp_userspirit FighterFrom, V_xy_sp_skill skill, V_xy_sp_spirit FighterTo,ref string batmsg)
+      private V_xy_sp_spirit SkillInjury(V_xy_sp_userspirit FighterFrom, V_xy_sp_skill skill, V_xy_sp_spirit FighterTo,ref string batmsg)
       {
           V_xy_sp_spirit Fightersult = new V_xy_sp_spirit();
           switch (skill.SkillType)
@@ -89,7 +96,7 @@ namespace XiYouServerMonitor
       /// </summary>
       /// <param name="FighterFrom"></param>
       /// <param name="FighterTo"></param>
-      private static void updateEnemy(V_xy_sp_userspirit FighterFrom, V_xy_sp_spirit FighterTo, V_xy_sp_skill skill, ref string batmsg)
+      private void updateEnemy(V_xy_sp_userspirit FighterFrom, V_xy_sp_spirit FighterTo, V_xy_sp_skill skill, ref string batmsg)
       {
           var LifeLeftValue = FighterTo.SpiritLife - skill.SkillGainValue;
 
@@ -105,7 +112,7 @@ namespace XiYouServerMonitor
               if (FighterFrom.SpiritExperience > LevelExperience(FighterFrom.SpiritLevel.Value))
               {
                   FighterFrom.SpiritLevel = FighterFrom.SpiritLevel + 1;
-                  batmsg += " 恭喜你升到" + FighterFrom.SpiritLevel + "级";
+                  batmsg +=System.Environment.NewLine+ " 恭喜你升到" + FighterFrom.SpiritLevel + "级";
                   FighterFrom.SpiritExperience = FighterFrom.SpiritExperience - LevelExperience(FighterFrom.SpiritLevel.Value);
               }
               uspBll.Edit(FighterFrom);
@@ -117,6 +124,7 @@ namespace XiYouServerMonitor
                   packageItem.UserSpiritID = FighterFrom.UserSpiritID;
                   packageItem.EquipmentID = item.EquipmentID;
                   spBll.Add(packageItem);
+                  batmsg += System.Environment.NewLine + " 本次战斗意外获得：" + item.EquipmentName;
               }
 
           }else
@@ -133,5 +141,31 @@ namespace XiYouServerMonitor
           decimal result = (n + 1) * 1000;
           return result;
       }  
+
+     /// <summary>
+     /// 最大以10w来算
+     /// </summary>
+     /// <param name="rate"></param>
+     /// <returns></returns>
+      public static bool RandomEquipment(double rate)
+      {
+          var s = rate.ToString();
+          int ratelength=s.Length - s.IndexOf('.') - 1;
+
+          var fenmu=1;
+          for(int i=0;i<=ratelength-1;i++)
+          {
+              fenmu=fenmu*10;
+          }
+
+          double fenzi=rate*fenmu;
+          Random r = new Random();
+          int result= r.Next((int)fenzi,fenmu);
+          if(result<=fenzi)
+          {
+              return true;
+          }
+          return false;
+      }
     }
 }
